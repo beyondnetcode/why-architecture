@@ -8,15 +8,15 @@
 
 ### Introduction
 
-Welcome to **why-architecture**, a comprehensive repository dedicated to exploring the critical importance of software architecture in driving reliable estimations, reducing risks, and enabling effective product investment planning.
+Welcome to **why-architecture**, a comprehensive repository dedicated to exploring the critical importance of software architecture in driving reliable estimations, reducing risks, and enabling effect[...]
 
-Over more than 20 years of industry experience, we have witnessed countless projects fail not due to lack of talent, but due to the absence of a solid architectural foundation. This repository exists to change that narrative.
+Over more than 20 years of industry experience, we have witnessed countless projects fail not due to lack of talent, but due to the absence of a solid architectural foundation. This repository exists [...]
 
 ### What is This Repository?
 
 This is a collection of **documents, frameworks, matrices, and practical artifacts** designed to demonstrate that:
 
-1. **Architecture is Operational Predictability** – It's not merely a technical diagram; it's the mechanism that determines whether your team will be productive or consumed by technical debt and maintenance chaos.
+1. **Architecture is Operational Predictability** – It's not merely a technical diagram; it's the mechanism that determines whether your team will be productive or consumed by technical debt and mai[...]
 
 2. **Predictability and Agility are Not Contradictory** – A framework based on specifications enables sustainable, scalable agility in the long term.
 
@@ -40,8 +40,9 @@ This repository proves that **comprehensive information architecture is the foun
 
 | Document | Language | Description |
 |----------|----------|-------------|
-| **[Why Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-es.md)** | Spanish | Comprehensive guide on architectural principles, the Quality Matrix (16 axes), 15 architectural deliverables, and the Spec-Driven + AI-Driven + Harnesses framework. |
-| **Data Model & Quality Matrix Sample** | — | **[Download: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Complete maturity level assignments for a real Supply Chain Management (SCM) system with practical examples. |
+| **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matrix with 16 axes, and the 15 Architectural Deliverables needed for accurate estimations. |
+| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Spanish | Guía comprensiva sobre principios arquitectónicos, la Matriz de Calidad Maestra (16 ejes) y los 15 Entregables Arquitectónicos. |
+| **Data Model & Quality Matrix Sample** | — | **[Download: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Complete maturity level assignments for a real Supply Chain Management (SCM) system with practical examples of Level 1-4 rigor assignment. |
 
 ### 📊 Key Sections in the Main Document
 
@@ -85,12 +86,17 @@ This repository proves that **comprehensive information architecture is the foun
 
 ## 🚀 Getting Started
 
-1. **Start with the main document:** [Why Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-es.md)
-2. **Review the practical example:** Download and explore [Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx) to see maturity level assignments in action
-3. **Understand the frameworks:**
-   - Spec-Driven Development (SDD)
-   - AI-Driven Development (AI-DD) with BMAD
-   - Production Harnesses (Circuit Breakers, Feature Flags, Contract Testing)
+### 📖 Read the Main Documents
+- **English:** [Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)
+- **Español:** [Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)
+
+### 📊 Review the Practical Examples
+- Download and explore [Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx) to see maturity level assignments in action
+
+### 🔑 Understand the Frameworks
+- Spec-Driven Development (SDD)
+- AI-Driven Development (AI-DD) with BMAD
+- Production Harnesses (Circuit Breakers, Feature Flags, Contract Testing)
 
 ---
 
@@ -120,23 +126,23 @@ This repository proves that **comprehensive information architecture is the foun
 
 ### Introducción
 
-Bienvenido a **why-architecture**, un repositorio integral dedicado a explorar la importancia crítica de la arquitectura de software en impulsar estimaciones confiables, reducir riesgos y posibilitar una planificación efectiva de inversión en productos.
+Bienvenido a **why-architecture**, un repositorio integral dedicado a explorar la importancia crítica de la arquitectura de software en impulsar estimaciones confiables, reducir riesgos y posibilitar[...]
 
-Tras más de 20 años de experiencia en la industria, hemos visto cómo innumerables proyectos fracasan no por falta de talento, sino por la ausencia de un sólido cimiento arquitectónico. Este repositorio existe para cambiar esa narrativa.
+Tras más de 20 años de experiencia en la industria, hemos visto cómo innumerables proyectos fracasan no por falta de talento, sino por la ausencia de un sólido cimiento arquitectónico. Este repos[...]
 
 ### ¿Qué es Este Repositorio?
 
 Esta es una colección de **documentos, frameworks, matrices y artefactos prácticos** diseñados para demostrar que:
 
-1. **La Arquitectura es Predictibilidad Operativa** – No es meramente un diagrama técnico; es el mecanismo que determina si tu equipo será productivo o será consumido por deuda técnica y caos de mantenimiento.
+1. **La Arquitectura es Predictibilidad Operativa** – No es meramente un diagrama técnico; es el mecanismo que determina si tu equipo será productivo o será consumido por deuda técnica y caos de[...]
 
 2. **Predictibilidad y Agilidad No Son Contradictorias** – Un framework basado en especificaciones permite agilidad sostenible y escalable a largo plazo.
 
-3. **El Desarrollo con IA Requiere Estructura** – El desarrollo asistido por IA solo funciona cuando existe un contrato arquitectónico claro que prevenga alucinaciones y generación de código ineficiente.
+3. **El Desarrollo con IA Requiere Estructura** – El desarrollo asistido por IA solo funciona cuando existe un contrato arquitectónico claro que prevenga alucinaciones y generación de código inef[...]
 
 ### ¿Por Qué Existe Este Repositorio?
 
-En la era del desarrollo asistido por IA, entrada rápida al mercado y sistemas complejos de cadenas de suministro, los equipos frecuentemente enfrentan una falsa dicotomía: **velocidad vs. calidad**.
+En la era del desarrollo asistido por IA, entrada rápida al mercado y sistemas complejos de cadenas de suministro, los equipos frecuentemente enfrentan una falsa dicotomía: **velocidad vs. calidad**[...]
 
 Este repositorio demuestra que **la información arquitectónica comprensiva es el cimiento para:**
 - ✅ Estimaciones precisas (basadas en 15+ entregables arquitectónicos, no solo en "historias de usuario")
@@ -152,7 +158,8 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 
 | Documento | Idioma | Descripción |
 |-----------|--------|-------------|
-| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Español | Guía comprensiva sobre principios arquitectónicos, la Matriz de Calidad (16 ejes), 15 entregables arquitectónicos y el framework Spec-Driven + AI-Driven + Harnesses. |
+| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Español | Guía comprensiva sobre principios arquitectónicos, la Matriz de Calidad Maestra (16 ejes) y los 15 Entregables Arquitectónicos necesarios para estimaciones precisas. |
+| **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matrix with 16 axes, and the 15 Architectural Deliverables. |
 | **Modelo de Datos y Muestra de Matriz de Calidad** | — | **[Descargar: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Asignaciones de niveles de madurez completos para un sistema real de Gestión de Cadena de Suministro (SCM) con ejemplos prácticos. |
 
 ### 📊 Secciones Clave del Documento Principal
@@ -197,12 +204,17 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 
 ## 🚀 Empezar
 
-1. **Comienza con el documento principal:** [Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)
-2. **Revisa el ejemplo práctico:** Descarga y explora [Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx) para ver asignaciones de niveles de madurez en acción
-3. **Entiende los frameworks:**
-   - Spec-Driven Development (SDD)
-   - AI-Driven Development (AI-DD) con BMAD
-   - Production Harnesses (Circuit Breakers, Feature Flags, Contract Testing)
+### 📖 Lee los Documentos Principales
+- **Español:** [Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)
+- **English:** [Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)
+
+### 📊 Revisa los Ejemplos Prácticos
+- Descarga y explora [Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx) para ver asignaciones de niveles de madurez en acción
+
+### 🔑 Entiende los Frameworks
+- Spec-Driven Development (SDD)
+- AI-Driven Development (AI-DD) con BMAD
+- Production Harnesses (Circuit Breakers, Feature Flags, Contract Testing)
 
 ---
 
