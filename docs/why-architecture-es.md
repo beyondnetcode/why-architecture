@@ -57,7 +57,7 @@ Para escalar desde un producto simple hasta una suite compleja, la productividad
 
 | Herramienta / Marco | Enfoque | Descripción y Valor Estratégico | Referencia Técnica |
 | :--- | :--- | :--- | :--- |
-| **BMAD** | AI-Driven | *Breakthrough Method for Agile AI-Driven Development*. Marco metodológico de código abierto para estructurar el desarrollo de software mediante agentes de IA. | [github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) |
+| **BMAD** | AI-Driven | *Breakthrough Method for Agile AI-Driven Development*. Marco metodológico de código abierto para estructurar el desarrollo mediante agentes de IA. | [github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) |
 | **GitHub Spec-Kit** | Spec / AI-Driven | Herramientas para definir especificaciones que los agentes de IA consumen directamente en los flujos de CI/CD. | [github.com/github/spec-kit](https://github.com/github/spec-kit) |
 | **Pact.io** | Contract Harness | Framework de *Consumer-Driven Contracts*. Garantiza que las integraciones entre microservicios no se rompan antes de llegar a producción. | [pact.io](https://pact.io) |
 | **Unleash** | Prod Harness | Plataforma de gestión de *Feature Flags*. Permite operar funcionalidades en caliente, habilitando Canary Releases seguros. | [getunleash.io](https://www.getunleash.io) |
@@ -72,6 +72,27 @@ Esta matriz es nuestra **herramienta de dimensionamiento técnico**. Cada nivel 
 * **Nivel 2 (Gestionado):** Establece controles básicos y gestión reactiva; ideal para productos con tracción inicial que necesitan orden elemental.
 * **Nivel 3 (Definido):** Define estándares proactivos y procesos estructurados (ej. ACID, Hexagonal) que aseguran la consistencia sistémica.
 * **Nivel 4 (Optimizado):** Requiere diseño profundo, patrones avanzados (ej. Saga, Idempotencia) y automatización total, garantizando resiliencia y productividad a largo plazo.
+
+En un **SCM**, donde un error en el transporte puede detener la cadena de suministro, operar en Niveles 3 y 4 no es opcional, es la base de la estabilidad del negocio.
+
+| # | Eje de Calidad | Nivel 1 (Inicial) | Nivel 2 (Gestionado) | Nivel 3 (Definido) | Nivel 4 (Optimizado) | Práctica Clave |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | **Consistencia** | Sin garantías. | Manual / App-side. | ACID completa. | Idempotencia / Saga. | ACID, Saga Pattern |
+| 2 | **Seguridad** | Hardcoded. | Auth Básica / Roles. | RBAC / OAuth2. | Defensa en Profundidad. | OWASP ASVS |
+| 3 | **Disponibilidad**| Caídas frecuentes. | Redundancia básica. | Alta disponibilidad. | Auto-healing / Chaos. | Zero-Downtime |
+| 4 | **Performance** | Lento (>3s). | Opt. reactiva (DB). | Latencia bajo SLA. | Opt. predictiva / IA. | p95 < 200ms |
+| 5 | **Resiliencia** | Error 3ro detiene todo.| Reintentos fijos. | Circuit Breaker / DLQ. | Degradación controlada. | Circuit Breaker |
+| 6 | **Mantenibilidad**| Código espagueti. | Deuda técnica alta. | Hexagonal Architecture. | Refactor continuo / IA. | SOLID, Clean Arch |
+| 7 | **Desacoplamiento**| Monolito unido. | Capas técnicas. | Bounded Contexts. | Event-Driven (EDA). | AsyncAPI |
+| 8 | **Escalabilidad** | Solo vertical. | Vertical reactivo. | Horizontal automático. | Elástico (Serverless). | Kubernetes |
+| 9 | **Modularidad** | Sin fronteras. | Por paquetes. | Modular Monolith. | Microservicios extraíbles.| ArchUnit, Modulith |
+| 10 | **Observabilidad** | Logs planos. | Centralizados. | Trazabilidad / Metrics. | AIOps / Alertas síntoma. | OpenTelemetry |
+| 11 | **Auditabilidad** | Sin rastro. | Logs manuales. | Trail inmutable. | Event Sourcing. | Event Store |
+| 12 | **Extensibilidad** | Reescribir core. | Flags de config. | Plug-ins y APIs. | Ecosistema externo. | Plugin Architecture |
+| 13 | **Testabilidad** | Manual en prod. | Cobertura baja. | Pirámide auto. | Mutation / Contract Test. | TDD, Pact |
+| 14 | **Integrabilidad** | CSV / Manual. | SOAP/REST viejo. | API-First / OpenAPI. | API Gateway/Monetize. | Kong, OpenAPI |
+| 15 | **Gobernanza** | Caos técnico. | Wiki ignorada. | Quality Gates / ADRs. | IDP (Backstage) / IA. | ADRs, Backstage |
+| 16 | **Portabilidad** | Acoplado a HW. | Contenedores fijos. | IaC / Docker. | Cloud-agnóstico total. | Terraform, Helm |
 
 ### Ejemplo de Aplicación: Secuencia de Asignación en una Suite SCM
 
@@ -90,6 +111,8 @@ Esta es la configuración resultante para los módulos críticos:
 | **Integrabilidad** | **Nivel 4** | Nivel 4 | Nivel 4 | Nivel 4 | Nivel 4 |
 | **Consistencia** | **Nivel 3** | Nivel 3 | Nivel 3 | Nivel 3 | Nivel 3 |
 | **Escalabilidad** | **Nivel 2** | Nivel 2 | Nivel 2 | Nivel 2 | Nivel 2 |
+
+> 📥 **Data de Ejemplo:** Puedes consultar y descargar la matriz completa de asignación de niveles utilizada como referencia para este caso de estudio en el siguiente enlace: [Dim.SCM.Sample.xlsx](https://github.com/beyondnetcode/why-architecture/blob/main/docs/Dim.SCM.Sample.xlsx)
 
 ---
 
