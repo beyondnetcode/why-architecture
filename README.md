@@ -1,6 +1,6 @@
 # Why Architecture? 🏗️
 
-**En español:** [Leer en Español](#español)
+**En español:** [Leer en Español](#-versión-en-español)
 
 ---
 
@@ -40,9 +40,9 @@ This repository proves that **comprehensive information architecture is the foun
 
 | Document | Language | Description |
 |----------|----------|-------------|
-| **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matrix with 16 axes, and the 15 Architectural Deliverables needed for accurate estimations. |
-| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Spanish | Guía comprensiva sobre principios arquitectónicos, la Matriz de Calidad Maestra (16 ejes) y los 15 Entregables Arquitectónicos. |
-| **Data Model & Quality Matrix Sample** | — | **[Download: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Complete maturity level assignments for a real Supply Chain Management (SCM) system with practical examples of Level 1-4 rigor assignment. |
+| **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matri[...]
+| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Spanish | Guía comprensiva sobre principios arquitectónicos, la Matriz de[...]
+| **Data Model & Quality Matrix Sample** | — | **[Download: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Complete maturity level assignments for a real Supply Chain Management (SCM) syst[...]
 
 ### 📊 Key Sections in the Main Document
 
@@ -59,7 +59,7 @@ This repository proves that **comprehensive information architecture is the foun
 **Chapter 3: Master Quality Matrix (16 Axes)**
 - Levels 1-4 Maturity Model explained
 - Real-world case study: Assigning rigor levels to SCM modules
-- Consistency, Security, Availability, Performance, Resiliency, Maintainability, Decoupling, Scalability, Modularity, Observability, Auditability, Extensibility, Testability, Integrability, Governance, Portability
+- Consistency, Security, Availability, Performance, Resiliency, Maintainability, Decoupling, Scalability, Modularity, Observability, Auditability, Extensibility, Testability, Integrability, Govern[...]
 
 **Chapter 4: The Estimation Map (15 Architectural Deliverables)**
 - Bounded Contexts Map
@@ -122,27 +122,27 @@ This repository proves that **comprehensive information architecture is the foun
 
 ---
 
-## 🇪🇸 VERSIÓN EN ESPAÑOL
+## 🇪🇸 Versión en Español
 
 ### Introducción
 
-Bienvenido a **why-architecture**, un repositorio integral dedicado a explorar la importancia crítica de la arquitectura de software en impulsar estimaciones confiables, reducir riesgos y posibilitar[...]
+Bienvenido a **why-architecture**, un repositorio integral dedicado a explorar la importancia crítica de la arquitectura de software en impulsar estimaciones confiables, reducir riesgos y posibi[...]
 
-Tras más de 20 años de experiencia en la industria, hemos visto cómo innumerables proyectos fracasan no por falta de talento, sino por la ausencia de un sólido cimiento arquitectónico. Este repos[...]
+Tras más de 20 años de experiencia en la industria, hemos visto cómo innumerables proyectos fracasan no por falta de talento, sino por la ausencia de un sólido cimiento arquitectónico. Este [...]
 
 ### ¿Qué es Este Repositorio?
 
 Esta es una colección de **documentos, frameworks, matrices y artefactos prácticos** diseñados para demostrar que:
 
-1. **La Arquitectura es Predictibilidad Operativa** – No es meramente un diagrama técnico; es el mecanismo que determina si tu equipo será productivo o será consumido por deuda técnica y caos de[...]
+1. **La Arquitectura es Predictibilidad Operativa** – No es meramente un diagrama técnico; es el mecanismo que determina si tu equipo será productivo o será consumido por deuda técnica y ca[...]
 
 2. **Predictibilidad y Agilidad No Son Contradictorias** – Un framework basado en especificaciones permite agilidad sostenible y escalable a largo plazo.
 
-3. **El Desarrollo con IA Requiere Estructura** – El desarrollo asistido por IA solo funciona cuando existe un contrato arquitectónico claro que prevenga alucinaciones y generación de código inef[...]
+3. **El Desarrollo con IA Requiere Estructura** – El desarrollo asistido por IA solo funciona cuando existe un contrato arquitectónico claro que prevenga alucinaciones y generación de código[...]
 
 ### ¿Por Qué Existe Este Repositorio?
 
-En la era del desarrollo asistido por IA, entrada rápida al mercado y sistemas complejos de cadenas de suministro, los equipos frecuentemente enfrentan una falsa dicotomía: **velocidad vs. calidad**[...]
+En la era del desarrollo asistido por IA, entrada rápida al mercado y sistemas complejos de cadenas de suministro, los equipos frecuentemente enfrentan una falsa dicotomía: **velocidad vs. cali[...]
 
 Este repositorio demuestra que **la información arquitectónica comprensiva es el cimiento para:**
 - ✅ Estimaciones precisas (basadas en 15+ entregables arquitectónicos, no solo en "historias de usuario")
@@ -158,9 +158,9 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 
 | Documento | Idioma | Descripción |
 |-----------|--------|-------------|
-| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Español | Guía comprensiva sobre principios arquitectónicos, la Matriz de Calidad Maestra (16 ejes) y los 15 Entregables Arquitectónicos necesarios para estimaciones precisas. |
-| **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matrix with 16 axes, and the 15 Architectural Deliverables. |
-| **Modelo de Datos y Muestra de Matriz de Calidad** | — | **[Descargar: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Asignaciones de niveles de madurez completos para un sistema real de Gestión de Cadena de Suministro (SCM) con ejemplos prácticos. |
+| **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Español | Guía comprensiva sobre principios arquitectónicos, la Matriz [...]
+| **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matr[...]
+| **Modelo de Datos y Muestra de Matriz de Calidad** | — | **[Descargar: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Asignaciones de niveles de madurez completos para un sistema real d[...]
 
 ### 📊 Secciones Clave del Documento Principal
 
@@ -177,7 +177,7 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 **Capítulo 3: Matriz de Calidad Maestra (16 Ejes)**
 - Modelo de madurez Niveles 1-4 explicado
 - Caso de estudio real: Asignación de niveles de rigor a módulos de SCM
-- Consistencia, Seguridad, Disponibilidad, Performance, Resiliencia, Mantenibilidad, Desacoplamiento, Escalabilidad, Modularidad, Observabilidad, Auditabilidad, Extensibilidad, Testeabilidad, Integrabilidad, Gobernanza, Portabilidad
+- Consistencia, Seguridad, Disponibilidad, Performance, Resiliencia, Mantenibilidad, Desacoplamiento, Escalabilidad, Modularidad, Observabilidad, Auditabilidad, Extensibilidad, Testeabilidad, Int[...]
 
 **Capítulo 4: El Mapa de la Estimación (15 Entregables Arquitectónicos)**
 - Mapa de Bounded Contexts
