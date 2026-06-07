@@ -1,10 +1,10 @@
-# Why Architecture? 🏗️
+# Why Architecture?
 
 **En español:** [Leer en Español](#-versión-en-español)
 
 ---
 
-## 📌 English Version
+## English Version
 
 ### Introduction
 
@@ -24,19 +24,19 @@ This is a collection of **documents, frameworks, matrices, and practical artifac
 
 ### Why This Repository Exists
 
-In the era of AI-assisted development, rapid market entry, and complex supply chain systems, teams often face a false choice: **speed vs. quality**. 
+In the era of AI-assisted development, rapid market entry, and complex supply chain systems, teams often face a false choice: **speed vs. quality**.
 
 This repository proves that **comprehensive information architecture is the foundation for:**
-- ✅ Accurate estimations (based on 15+ architectural deliverables, not just "user stories")
-- ✅ Risk mitigation (through the Master Quality Matrix with 16 maturity axes)
-- ✅ Sustainable productivity (via Spec-Driven Development + AI-Driven Development + Production Harnesses)
-- ✅ Effective investment decisions (knowing which systems require Level 4 rigor vs. Level 1 pragmatism)
+- Accurate estimations (based on 15+ architectural deliverables, not just "user stories")
+- Risk mitigation (through the Master Quality Matrix with 16 maturity axes)
+- Sustainable productivity (via Spec-Driven Development + AI-Driven Development + Production Harnesses)
+- Effective investment decisions (knowing which systems require Level 4 rigor vs. Level 1 pragmatism)
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-### 🎯 Core Documents / Documentos Principales
+### Core Documents / Documentos Principales
 
 | Document | Language | Description |
 |----------|----------|-------------|
@@ -44,7 +44,7 @@ This repository proves that **comprehensive information architecture is the foun
 | **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Spanish | Guía comprensiva sobre principios arquitectónicos, la Matriz de[...]
 | **Data Model & Quality Matrix Sample** | — | **[Download: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Complete maturity level assignments for a real Supply Chain Management (SCM) syst[...]
 
-### 📊 Key Sections in the Main Document
+### Key Sections in the Main Document
 
 **Chapter 1: The Horizon Dilemma**
 - Agility vs. Predictability: How to reconcile both
@@ -84,23 +84,23 @@ This repository proves that **comprehensive information architecture is the foun
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### 📖 Read the Main Documents
+### Read the Main Documents
 - **English:** [Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)
 - **Español:** [Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)
 
-### 📊 Review the Practical Examples
+### Review the Practical Examples
 - Download and explore [Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx) to see maturity level assignments in action
 
-### 🔑 Understand the Frameworks
+### Understand the Frameworks
 - Spec-Driven Development (SDD)
 - AI-Driven Development (AI-DD) with BMAD
 - Production Harnesses (Circuit Breakers, Feature Flags, Contract Testing)
 
 ---
 
-## 📚 Recommended Tools & Frameworks
+## Recommended Tools & Frameworks
 
 | Tool | Purpose | Link |
 |------|---------|------|
@@ -112,7 +112,7 @@ This repository proves that **comprehensive information architecture is the foun
 
 ---
 
-## 📧 Connect & Contribute
+## Connect & Contribute
 
 - **Main Repository:** [github.com/beyondnetcode/why-architecture](https://github.com/beyondnetcode/why-architecture)
 - **Author's GitHub:** [github.com/beyondnetPeru](https://github.com/beyondnetPeru)
@@ -122,7 +122,7 @@ This repository proves that **comprehensive information architecture is the foun
 
 ---
 
-## 🇪🇸 Versión en Español
+## Versión en Español
 
 ### Introducción
 
@@ -145,16 +145,16 @@ Esta es una colección de **documentos, frameworks, matrices y artefactos práct
 En la era del desarrollo asistido por IA, entrada rápida al mercado y sistemas complejos de cadenas de suministro, los equipos frecuentemente enfrentan una falsa dicotomía: **velocidad vs. cali[...]
 
 Este repositorio demuestra que **la información arquitectónica comprensiva es el cimiento para:**
-- ✅ Estimaciones precisas (basadas en 15+ entregables arquitectónicos, no solo en "historias de usuario")
-- ✅ Mitigación de riesgos (mediante la Matriz de Calidad con 16 ejes de madurez)
-- ✅ Productividad sostenible (vía Spec-Driven Development + AI-Driven Development + Production Harnesses)
-- ✅ Decisiones de inversión efectivas (sabiendo qué sistemas requieren rigor de Nivel 4 vs. pragmatismo de Nivel 1)
+- Estimaciones precisas (basadas en 15+ entregables arquitectónicos, no solo en "historias de usuario")
+- Mitigación de riesgos (mediante la Matriz de Calidad con 16 ejes de madurez)
+- Productividad sostenible (vía Spec-Driven Development + AI-Driven Development + Production Harnesses)
+- Decisiones de inversión efectivas (sabiendo qué sistemas requieren rigor de Nivel 4 vs. pragmatismo de Nivel 1)
 
 ---
 
-## 📑 Tabla de Contenidos
+## Tabla de Contenidos
 
-### 🎯 Documentos Principales / Core Documents
+### Documentos Principales / Core Documents
 
 | Documento | Idioma | Descripción |
 |-----------|--------|-------------|
@@ -162,7 +162,7 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 | **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matr[...]
 | **Modelo de Datos y Muestra de Matriz de Calidad** | — | **[Descargar: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Asignaciones de niveles de madurez completos para un sistema real d[...]
 
-### 📊 Secciones Clave del Documento Principal
+### Secciones Clave del Documento Principal
 
 **Capítulo 1: El Dilema del Horizonte**
 - Agilidad vs. Predictibilidad: Cómo reconciliar ambas
@@ -202,23 +202,23 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 
 ---
 
-## 🚀 Empezar
+## Empezar
 
-### 📖 Lee los Documentos Principales
+### Lee los Documentos Principales
 - **Español:** [Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)
 - **English:** [Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)
 
-### 📊 Revisa los Ejemplos Prácticos
+### Revisa los Ejemplos Prácticos
 - Descarga y explora [Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx) para ver asignaciones de niveles de madurez en acción
 
-### 🔑 Entiende los Frameworks
+### Entiende los Frameworks
 - Spec-Driven Development (SDD)
 - AI-Driven Development (AI-DD) con BMAD
 - Production Harnesses (Circuit Breakers, Feature Flags, Contract Testing)
 
 ---
 
-## 📚 Herramientas y Frameworks Recomendados
+## Herramientas y Frameworks Recomendados
 
 | Herramienta | Propósito | Enlace |
 |-------------|----------|--------|
@@ -230,7 +230,7 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 
 ---
 
-## 📧 Conecta y Contribuye
+## Conecta y Contribuye
 
 - **Repositorio Principal:** [github.com/beyondnetcode/why-architecture](https://github.com/beyondnetcode/why-architecture)
 - **GitHub del Autor:** [github.com/beyondnetPeru](https://github.com/beyondnetPeru)
@@ -238,7 +238,7 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 
 ---
 
-## 📄 License
+## License
 
 This repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
