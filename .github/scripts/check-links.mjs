@@ -43,10 +43,15 @@ function markdownFiles() {
 }
 
 /**
- * Blank out fenced code blocks and inline code, preserving line count so that
- * reported line numbers stay accurate.
+ * Blank out fenced code blocks, and optionally inline code, preserving line
+ * count so that reported line numbers stay accurate.
+ *
+ * `inlineToo` must be false when collecting heading anchors: a heading such as
+ * "### `outputSchema`" is entirely inline code, and blanking it would yield an
+ * empty slug and report every correct link to it as broken. GitHub renders the
+ * backticks as <code> and slugs the text inside them.
  */
-function stripCode(src) {
+function stripCode(src, inlineToo = true) {
   const lines = src.split('\n');
   let fence = null;
   const out = lines.map((line) => {
@@ -59,14 +64,14 @@ function stripCode(src) {
       fence = open[1];
       return '';
     }
-    return line.replace(/`[^`\n]*`/g, (m) => ' '.repeat(m.length));
+    return inlineToo ? line.replace(/`[^`\n]*`/g, (m) => ' '.repeat(m.length)) : line;
   });
   return out.join('\n');
 }
 
 /** Anchors GitHub will actually generate for a file: headings + explicit HTML ids. */
 function anchorsFor(absPath) {
-  const src = stripCode(readFileSync(absPath, 'utf8'));
+  const src = stripCode(readFileSync(absPath, 'utf8'), false);
   const slugger = new GithubSlugger();
   const anchors = new Set();
 
@@ -75,7 +80,7 @@ function anchorsFor(absPath) {
     // Strip inline markdown so "## **Bold** `code`" slugs like GitHub renders it.
     const text = m[1]
       .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1') // links/images -> their text
-      .replace(/[*_~]/g, '')
+      .replace(/[*_~`]/g, '')
       .trim();
     anchors.add(slugger.slug(text));
   }
