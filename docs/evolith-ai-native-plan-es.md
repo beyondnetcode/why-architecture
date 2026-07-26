@@ -1,5 +1,7 @@
 # Plan de estudio calendarizado — Evolith AI-native
 
+> ⚠️ **SUPERADO (2026-07-25)** por el plan de 12 meses de [`evolith-ai-career-path-es.md`](evolith-ai-career-path-es.md) (§5). Se conserva por trazabilidad.
+
 > Compañero operativo de [`evolith-ai-native-route-es.md`](evolith-ai-native-route-es.md). Convierte la ruta de 7 fases en un calendario con **semanas, horas y un mini-proyecto aplicado a Evolith** por fase, más **decision gates** entre fases.
 
 ## Cómo usar este plan

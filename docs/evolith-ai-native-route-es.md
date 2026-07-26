@@ -1,5 +1,8 @@
 # Evolith en la era AI-native: Ruta de *Architecture Intelligence & Governance*
 
+> ⚠️ **SUPERADO (2026-07-25)** por [`evolith-ai-career-path-es.md`](evolith-ai-career-path-es.md).
+> Este documento se construyó sobre la documentación de Evolith, no sobre su código, y encuadra el problema solo como "IA aplicada a architecture governance". La revisión posterior — con inspección directa de los repos `evolith` y `evolith_tracker` — invalida tres de sus tesis centrales: el foso **no** es el knowledge graph sino el registro de procedencia atribuible; MCP es la superficie de control **más débil**, no la más fuerte; y la secuencia de aprendizaje debe invertirse (instrumentar y medir **antes** de generar). Se conserva por trazabilidad.
+
 > Documento estratégico + ruta de aprendizaje para evolucionar **Evolith Core** y **Evolith Tracker** desde una plataforma tradicional de *architecture governance* hacia una plataforma de **Architecture Intelligence & Governance** capaz de comprender arquitectura, analizar código, coordinar y gobernar agentes de IA, validar sus decisiones, detectar desviaciones y generar **evidencia continua** sobre cómo evoluciona el software cuando humanos y agentes construyen juntos.
 >
 > Selección curada mediante investigación multi-agente (10 dominios de IA + síntesis) con **URLs verificadas**. Priorizada por **valor estratégico y horizonte temporal**, no por idioma: a este nivel el contenido de frontera está mayormente en inglés.

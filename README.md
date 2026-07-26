@@ -43,8 +43,10 @@ This repository proves that **comprehensive information architecture is the foun
 | **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matri[...]
 | **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Spanish | Guía comprensiva sobre principios arquitectónicos, la Matriz de[...]
 | **Data Model & Quality Matrix Sample** | — | **[Download: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Complete maturity level assignments for a real Supply Chain Management (SCM) syst[...]
-| **[Evolith AI-native Route: Architecture Intelligence & Governance](docs/evolith-ai-native-route-es.md)** | Spanish | Strategy, positioning thesis, and a 7-phase AI-engineering learning route (25 verified resources) to evolve Evolith Core/Tracker into an AI-native Architecture Intelligence & Governance platform. |
-| **[Evolith AI-native Study Plan](docs/evolith-ai-native-plan-es.md)** | Spanish | Calendarized companion (19 weeks, ~114h): weekly hours, an Evolith mini-project per phase, and decision gates. |
+| **[Evolith AI Career Path: designing the AI-native suite](docs/evolith-ai-career-path-en.md)** | English | **Current.** Multi-year specialization route built from source inspection of the real Evolith Core/Tracker repos plus 10-domain research: 2–3 year career path, 12-month calendarized plan, technologies to master/know/watch/ignore, 8 Evolith-linked projects, a Core × Tracker × CLI × MCP × Agents knowledge matrix, and "The Future of Evolith". |
+| **[Evolith AI Career Path: diseñar la suite AI-native](docs/evolith-ai-career-path-es.md)** | Spanish | Same document in Spanish. |
+| **[AI-native Glossary](docs/glossary-ai-native-en.md)** · **[Glosario](docs/glosario-ai-native-es.md)** | English / Spanish | ~150 AI-era and standards terms, one sentence and one example each, grouped by family. Every technical term in the Career Path links here. |
+| **[Evolith AI-native Route](docs/evolith-ai-native-route-es.md)** · **[Study Plan](docs/evolith-ai-native-plan-es.md)** | Spanish | *Superseded by the Career Path above.* Earlier 7-phase route framed around AI applied to architecture governance only. |
 
 ### Key Sections in the Main Document
 
@@ -163,8 +165,10 @@ Este repositorio demuestra que **la información arquitectónica comprensiva es 
 | **[Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA](docs/why-architecture-es.md)** | Español | Guía comprensiva sobre principios arquitectónicos, la Matriz [...]
 | **[Architecture: The Foundation of Estimation and Productivity in the AI Era](docs/why-architecture-en.md)** | English | Comprehensive guide on architectural principles, the Master Quality Matr[...]
 | **Modelo de Datos y Muestra de Matriz de Calidad** | — | **[Descargar: Dim.SCM.Sample.xlsx](docs/Dim.SCM.Sample.xlsx)** – Asignaciones de niveles de madurez completos para un sistema real d[...]
-| **[Ruta AI-native de Evolith: Architecture Intelligence & Governance](docs/evolith-ai-native-route-es.md)** | Español | Tesis, posicionamiento y ruta de aprendizaje de AI-engineering en 7 fases (25 recursos verificados) para evolucionar Evolith Core/Tracker hacia una plataforma AI-native de Architecture Intelligence & Governance. |
-| **[Plan de Estudio AI-native de Evolith](docs/evolith-ai-native-plan-es.md)** | Español | Compañero calendarizado (19 semanas, ~114h): horas semanales, un mini-proyecto de Evolith por fase y decision gates. |
+| **[Evolith AI Career Path: diseñar la suite AI-native](docs/evolith-ai-career-path-es.md)** | Español | **Vigente.** Ruta de especialización plurianual construida desde la inspección del código real de Evolith Core/Tracker más investigación en 10 dominios: career path de 2–3 años, plan calendarizado de 12 meses, tecnologías a dominar/conocer/vigilar/ignorar, 8 proyectos ligados a Evolith, matriz Core × Tracker × CLI × MCP × Agents y "The Future of Evolith". |
+| **[Evolith AI Career Path: designing the AI-native suite](docs/evolith-ai-career-path-en.md)** | English | El mismo documento en inglés. |
+| **[Glosario AI-native](docs/glosario-ai-native-es.md)** · **[Glossary](docs/glossary-ai-native-en.md)** | Español / English | ~150 términos de la era AI y de estándares, una frase y un ejemplo cada uno, agrupados por familia. Cada término técnico del Career Path enlaza aquí. |
+| **[Ruta AI-native de Evolith](docs/evolith-ai-native-route-es.md)** · **[Plan de Estudio](docs/evolith-ai-native-plan-es.md)** | Español | *Superados por el Career Path anterior.* Ruta previa en 7 fases, planteada solo desde IA aplicada a architecture governance. |
 
 ### Secciones Clave del Documento Principal
 
