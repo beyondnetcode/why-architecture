@@ -12,13 +12,23 @@
 
 ### The building site nobody is writing down
 
-Building software resembles putting up a building. There are blueprints, there are bricklayers, and there is an inspector confirming at each stage that what was built matches what was approved. **Evolith is that inspector**, and its promise is that architecture decisions actually hold.
+Building software resembles putting up a building. There are blueprints, there are bricklayers, and someone confirms at each stage that what was built matches what was approved. **Evolith does that job**, and its promise is that architecture decisions actually hold.
+
+But Evolith is not one piece, and the distinction matters for everything that follows:
+
+| The piece | On the site | What it does |
+|---|---|---|
+| **Evolith Core** | The inspector and the building code | Knows what is permitted, examines what was built and issues a ruling. It **files nothing**: by design it does not remember, and its ruling **is not the final signature**. |
+| **Evolith Tracker** | The site office | Keeps the logbook, records who approved what and when, and **is the one that signs**. |
+| **CLI, MCP and API** | The site gates | Where people, automation and robots talk to the inspector. |
+
+That the inspector files nothing is not a defect: it is what lets it issue the same ruling on the same facts every time, with no memory to contaminate it. **The inspector recommends; the office decides.**
 
 What changed in the last two years is who lays the bricks. There are now **robot bricklayers** — AI agents — raising walls faster than any human crew. They are quick, obedient and tireless. And they do not look at the blueprints unless someone imposes them.
 
 So far, Evolith's original thesis is right, and it stays right.
 
-This review's finding is a different one, and it is uncomfortable: **the site has been running for months and the logbook is blank.** Not for lack of technology — the inspector is well built, with years of solid engineering behind it — but because **it has never been put to work on a real site**. Zero inspections recorded. Zero pages written.
+This review's finding is a different one, and it is uncomfortable. **The inspector is well built** — years of solid engineering behind it — but **the site office has never opened**. Tracker has never been put to work on a real site: zero inspections recorded, zero pages written, **the logbook blank**.
 
 And here is the detail that makes it urgent: **the logbook can only be written while the work happens.** A year from now, nobody will be able to reconstruct who laid which brick.
 
@@ -28,11 +38,13 @@ And here is the detail that makes it urgent: **the logbook can only be written w
 
 The earlier plan proposed building an intelligent model of the building: a map relating everything to everything. It is the intellectually attractive answer, and it is the wrong one.
 
-What makes an inspector irreplaceable is not their model. It is their logbook: *who* did this, *when*, and *under which version of the code in force that day*. No competitor has that, and it cannot be copied — only accumulated.
+What makes an inspection irreplaceable is not its model. It is the office's logbook: *who* did this, *when*, and *under which version of the code in force that day*. No competitor has that, and it cannot be copied — only accumulated.
+
+An important design note: **that logbook lives in Tracker, not in Core.** Core cannot hold it without ceasing to be what it is. Much of the route that follows is therefore Tracker work.
 
 > **The concrete case.** A 2026 study across 180 million repositories tried to work out, after the fact, which code an AI had written. The method essentially the whole industry relies on recovered **3 cases in 100**. The conclusion is brutal in its simplicity: either you write it down as it happens, or you lose it forever.
 
-**2 · The inspector has never measured how often it is wrong.**
+**2 · Nobody has measured how often the inspector is wrong.**
 
 Evolith rejects work. It blocks deliveries that fail the rules. But nobody has ever measured **how often it rejects work that was actually fine**.
 
@@ -80,12 +92,14 @@ Three facts, unadorned:
 
 The single most important point of the whole analysis is this: **the four highest-impact actions require no AI learning at all.**
 
-1. **Write down who does what.** Add to the database the distinction between "a person did this" and "an agent did this, with this model, in this session". Days of work. **It is the only one that expires**: what is not written down today is never recoverable.
-2. **Make the tool say *why* it failed** in a way any system understands. Weeks of work, and it turns advice into control — across every environment at once, without writing an integration for each.
-3. **Publish the error rate of the rules that already exist.** It is what makes the product sellable to a risk officer, and nobody in this category can currently claim it.
-4. **Deploy it**, so the logbook starts filling.
+| # | Action | Where it happens | Effort |
+|---|---|---|---|
+| **1** | **Write down who does what.** Distinguish in the record between "a person did this" and "an agent did this, with this model, in this session". **It is the only one that expires**: what is not written down today is never recoverable. | **Tracker** | Days |
+| **2** | **Make the tool say *why* it failed** in a way any system understands. It turns advice into control, across every environment at once, without writing an integration for each. | **CLI** | Weeks |
+| **3** | **Publish the error rate of the rules that already exist.** It is what makes the product sellable to a risk officer, and nobody in this category can currently claim it. | **Core + Tracker** | Weeks |
+| **4** | **Open the office**: deploy Tracker, so the logbook starts filling. | **Tracker** | Blocked, awaiting a decision |
 
-None of the four is a research project. All four are unstarted.
+None of the four is a research project. All four are unstarted. And three of the four are **Tracker** work rather than Core — which is where the analysis departs most from the initial intuition.
 
 ### The question driving everything else
 

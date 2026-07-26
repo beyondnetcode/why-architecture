@@ -1,12 +1,35 @@
 # AI-native Glossary
 
 > **Bilingual navigation:** [Leer en Español](glosario-ai-native-es.md) · **Document that uses it:** [Evolith AI Career Path](evolith-ai-career-path-en.md)
->
-> Each term: **one sentence of definition** and **one short example**. Grouped by family rather than alphabetically, because this vocabulary is easier to absorb by proximity. Excludes what is already trade knowledge (DDD, hexagonal, REST, SQL, ADR, OPA, C4) and Evolith's internal identifiers.
+
+**How to use this.** Each term carries **one sentence of definition** and **one short example**. They are grouped by family rather than alphabetically, because this vocabulary is easier to absorb by proximity: reading a whole family takes two minutes and leaves you with the full map of one topic.
+
+You do not need to read it end to end. If you arrived from a link, read that entry and go back. If you want your bearings, start with the ten below.
+
+---
+
+## Start here: the ten terms everything rests on
+
+If you retain only ten, make it these. Explained without jargon, using the building-site analogy the [Career Path](evolith-ai-career-path-en.md) runs on.
+
+| Term | In one sentence | Why it matters |
+|---|---|---|
+| **Agent** | A program you give a goal to, not a list of steps: it decides which tools to use and in what order. | This is the "robot bricklayer". Fast and obedient, but it decides on its own. |
+| **LLM** | The language model underneath: it predicts text very well and occasionally invents things with total confidence. | Good for **proposing**. In a control system it should never be the thing that **decides**. |
+| **[MCP](#mcp)** | A standard socket letting an agent discover and use external tools. | Evolith offers one — but the agent **can decline to plug in**. Hence the weakest control. |
+| **[Provenance](#provenance)** | The record of who produced a piece of data, when, and with which version. | **This is the logbook.** The asset no competitor can copy, only accumulate. |
+| **[TPR / TNR](#tpr--tnr)** | Two percentages: how many real violations you catch, and how often you accuse someone who did nothing wrong. | The second decides whether your control gets used or switched off. Nobody has measured it yet. |
+| **[Architecture drift](#architecture-drift--erosion)** | The widening gap between the architecture that was decided and the one actually built. | It is the problem Evolith exists to detect. |
+| **[Fitness function](#fitness-function)** | An automated test continuously checking one property of the architecture. | The practical way a design decision stops being just a document. |
+| **[Exit code](#exit-code)** | The number a tool returns when it finishes: 0 if it went well, something else if not. | It sounds trivial and it is the **cheapest, most universal** piece of control that exists. |
+| **[RAG](#rag)** | Finding the relevant fragments and handing them to the model, instead of trusting its memory. | The standard way to make an AI answer about *your* documents. |
+| **[Knowledge graph](#knowledge-graph)** | Representing things and their relationships as a network of nodes and arrows. | The intuitive answer this analysis **rejects**: elegant, expensive, and not solving the real problem. |
 
 ---
 
 ## 1. Agent protocol (MCP and its neighbourhood)
+
+*What this family is about: how an agent discovers which tools exist and uses them. If agents are the workers, this is the language in which they ask for tools and hand them over.*
 
 ### MCP
 An open protocol standardising how an AI model discovers and calls tools, reads resources and uses prompts from an external server, turning N×M integration into N+M.
@@ -92,6 +115,8 @@ An intermediary sitting in front of MCP servers to route, filter and authorize c
 
 ## 2. Authorization, identity and trust
 
+*What this family is about: who may do what, and how that is proved. It is the site's access control — who gets in, on whose authority, and who answers if something goes wrong.*
+
 ### HITL *(Human-in-the-loop)*
 A design where an action does not execute until a human explicitly approves it.
 *Example:* the agent proposes dropping an index; the operation stays pending until someone clicks approve.
@@ -160,6 +185,8 @@ An approach separating control flow from data flow and labelling provenance, so 
 
 ## 3. Evidence, provenance and audit
 
+*What this family is about: how to record what happened so nobody can alter it afterwards. This is the logbook, and it is where Evolith's competitive advantage lives.*
+
 ### Provenance
 Metadata recording where a datum came from: who or what produced it, with which version, over which artifact.
 *Example:* `{collectedBy:"structural-review", adapterVersion:"1.2", artifactHash:"sha256:..."}`.
@@ -207,6 +234,8 @@ A tool recording line-level authorship at generation time, with no heuristics an
 ---
 
 ## 4. Measurement and evaluation
+
+*What this family is about: how to check that an automated judgement is right, and how often it is wrong. Without this, any verdict — from a rule or from an AI — is an opinion.*
 
 ### Eval
 A systematic, repeatable test of an AI system's quality over a set of cases.
@@ -268,6 +297,8 @@ What fraction of the relevant items appears in the top k, and how high the first
 
 ## 5. Generating with language models
 
+*What this family is about: how you ask a model for something, and what it costs — in money and in accuracy — to ask one way rather than another. The surprise of the chapter: demanding a rigid format improves the shape and degrades the substance.*
+
 ### LLM
 A language model trained on large volumes of text that predicts continuations.
 *Example:* the piece that **proposes**; in a governance system it should never be the one that **decides**.
@@ -328,6 +359,8 @@ Retraining a model on your own data to specialize it.
 
 ## 6. Retrieval and knowledge
 
+*What this family is about: how to give a model the information it needs without dumping the whole archive on it. More context is not better context.*
+
 ### RAG
 Retrieving pertinent fragments and giving them to the model as context, rather than trusting its memory.
 *Example:* you find the applicable ADR and pass it into the prompt so the answer can cite its source.
@@ -379,6 +412,8 @@ A triple-based data model, its query language, and the stores that hold it.
 ---
 
 ## 7. Code intelligence
+
+*What this family is about: how one program understands another's structure without running it — what calls what, what depends on what, and whether that resembles the blueprints.*
 
 ### SCIP
 An open standard format for publishing a repository's semantic index: symbols, definitions and references.
@@ -436,6 +471,8 @@ Dependency-rule checkers for Java, PHP, JavaScript/TypeScript and Python respect
 
 ## 8. Agentic architecture
 
+*What this family is about: how to organise a system where the model decides the steps, and how to keep it on a leash without removing its usefulness.*
+
 ### Agent
 A system where a model decides which tools to use and in what order to reach a goal.
 *Example:* distinct from a *workflow*, where the order is fixed in code.
@@ -488,6 +525,8 @@ Stores giving an agent persistent memory across sessions.
 
 ## 9. Governance and compliance
 
+*What this family is about: the external rules — regulators, certifiable standards, threat catalogues — you must be able to demonstrate conformance against. Nothing is invented here: you adopt the taxonomy an auditor already recognises.*
+
 ### NIST AI RMF
 A voluntary US framework organising AI risk into functions (govern, map, measure, manage).
 *Example:* a good **recognised** taxonomy for structuring results, instead of inventing one.
@@ -524,6 +563,8 @@ Writing policy as versioned code a machine can evaluate.
 
 ## 10. Engineering metrics
 
+*What this family is about: how to measure whether a team delivers well, and why almost all of these metrics get misused the moment they become a target.*
+
 ### DORA
 The research programme whose metrics measure software delivery performance.
 *Example:* deployment frequency, lead time, change failure rate, recovery time and **rework rate**.
@@ -555,6 +596,8 @@ Coding-agent benchmarks over real issues and terminal tasks.
 ---
 
 ## 11. Machine interfaces and observability
+
+*What this family is about: how one tool talks to other tools with no human in between, and how you see what is actually happening inside.*
 
 ### Exit code
 The number a process returns on termination, interpreted identically by every consumer — shell, CI, agent.

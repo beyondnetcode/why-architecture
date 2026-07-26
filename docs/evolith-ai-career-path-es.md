@@ -12,13 +12,23 @@
 
 ### La obra que nadie apunta en el cuaderno
 
-Construir software se parece a levantar un edificio. Hay unos planos, hay albañiles, y hay un inspector que comprueba en cada etapa que lo construido se corresponde con lo aprobado. **Evolith es ese inspector**, y su promesa es que las decisiones de arquitectura se cumplan de verdad.
+Construir software se parece a levantar un edificio. Hay unos planos, hay albañiles, y hay alguien que comprueba en cada etapa que lo construido se corresponde con lo aprobado. **Evolith hace ese trabajo**, y su promesa es que las decisiones de arquitectura se cumplan de verdad.
+
+Pero Evolith no es una sola pieza, y la distinción importa para todo lo que viene:
+
+| La pieza | En la obra | Qué hace |
+|---|---|---|
+| **Evolith Core** | El inspector y el código de edificación | Sabe qué está permitido, examina lo construido y emite un dictamen. **No archiva nada**: por diseño no recuerda, y su dictamen **no es la firma final**. |
+| **Evolith Tracker** | La oficina de obra | Guarda el cuaderno, registra quién aprobó qué y cuándo, y **es quien firma**. |
+| **CLI, MCP y API** | Las puertas de la obra | Por donde personas, automatismos y robots hablan con el inspector. |
+
+Que el inspector no archive no es un defecto: es lo que le permite emitir el mismo dictamen ante los mismos hechos, siempre, sin que su memoria lo contamine. **El inspector recomienda; la oficina decide.**
 
 Lo que cambió en los últimos dos años es quién pone los ladrillos. Ahora hay **albañiles robot** —agentes de IA— que levantan muros a una velocidad que ningún equipo humano alcanza. Son rápidos, obedientes y no se cansan. Y no miran los planos a menos que alguien se los imponga.
 
 Hasta aquí, la tesis original de Evolith es correcta y sigue siéndolo.
 
-El hallazgo de esta revisión es otro, y es incómodo: **la obra lleva meses funcionando y el cuaderno de bitácora está en blanco.** No porque falte tecnología —el inspector está bien construido, con años de ingeniería sólida detrás— sino porque **nunca se ha puesto en marcha en una obra real**. Cero inspecciones registradas. Cero páginas escritas.
+El hallazgo de esta revisión es otro, y es incómodo. **El inspector está bien construido** —años de ingeniería sólida detrás— pero **la oficina de obra nunca ha abierto**. El Tracker jamás se ha puesto en marcha en una obra real: cero inspecciones registradas, cero páginas escritas, **el cuaderno en blanco**.
 
 Y aquí está el detalle que lo convierte en urgente: **el cuaderno solo se puede escribir mientras la obra avanza.** Dentro de un año nadie podrá reconstruir quién puso cada ladrillo.
 
@@ -28,11 +38,13 @@ Y aquí está el detalle que lo convierte en urgente: **el cuaderno solo se pued
 
 El plan anterior proponía construir una maqueta inteligente del edificio: un mapa que relacionara todo con todo. Es la respuesta intelectualmente atractiva, y es la equivocada.
 
-Lo que hace insustituible a un inspector no es su maqueta. Es su cuaderno: *quién* hizo esto, *cuándo*, y *bajo qué versión de la normativa vigente ese día*. Eso no lo tiene ningún competidor, y no se puede copiar — solo acumular.
+Lo que hace insustituible a una inspección no es su maqueta. Es el cuaderno de la oficina: *quién* hizo esto, *cuándo*, y *bajo qué versión de la normativa vigente ese día*. Eso no lo tiene ningún competidor, y no se puede copiar — solo acumular.
+
+Nota importante para el diseño: **ese cuaderno vive en el Tracker, no en Core.** Core no puede guardarlo sin dejar de ser lo que es. Buena parte de la ruta que viene es, por tanto, trabajo de Tracker.
 
 > **El caso concreto.** Un estudio de 2026 sobre 180 millones de repositorios intentó averiguar, a posteriori, qué código había escrito una IA. El método que usa prácticamente toda la industria recuperó **3 de cada 100 casos**. La conclusión es brutal en su simplicidad: o lo apuntas en el momento, o lo pierdes para siempre.
 
-**2 · El inspector nunca ha medido cuántas veces se equivoca.**
+**2 · Nadie ha medido cuántas veces se equivoca el inspector.**
 
 Evolith rechaza trabajo. Bloquea entregas que no cumplen. Pero nadie ha medido nunca **con qué frecuencia rechaza trabajo que en realidad estaba bien**.
 
@@ -80,12 +92,14 @@ Tres hechos, sin adornos:
 
 Lo más importante de todo el análisis es esto: **las cuatro acciones de mayor impacto no requieren aprender IA.**
 
-1. **Apuntar quién hace cada cosa.** Añadir a la base de datos la distinción entre "lo hizo una persona" y "lo hizo un agente, con este modelo, en esta sesión". Es trabajo de días. **Es lo único que caduca**: lo que no se apunte hoy no se recupera nunca.
-2. **Hacer que la herramienta diga *por qué* falló** de una forma que cualquier sistema entienda. Semanas de trabajo, y convierte un consejo en un control — en todos los entornos a la vez, sin escribir una integración para cada uno.
-3. **Publicar la tasa de error de las reglas que ya existen.** Es lo que hace vendible el producto a un responsable de riesgos, y hoy no puede afirmarlo nadie en esta categoría.
-4. **Desplegarlo**, para que el cuaderno empiece a llenarse.
+| # | Acción | Dónde se hace | Esfuerzo |
+|---|---|---|---|
+| **1** | **Apuntar quién hace cada cosa.** Distinguir en el registro entre "lo hizo una persona" y "lo hizo un agente, con este modelo, en esta sesión". **Es lo único que caduca**: lo que no se apunte hoy no se recupera nunca. | **Tracker** | Días |
+| **2** | **Hacer que la herramienta diga *por qué* falló** de forma que cualquier sistema lo entienda. Convierte un consejo en un control, en todos los entornos a la vez, sin escribir una integración para cada uno. | **CLI** | Semanas |
+| **3** | **Publicar la tasa de error de las reglas que ya existen.** Es lo que hace vendible el producto a un responsable de riesgos, y hoy no puede afirmarlo nadie en esta categoría. | **Core + Tracker** | Semanas |
+| **4** | **Abrir la oficina**: desplegar el Tracker, para que el cuaderno empiece a llenarse. | **Tracker** | Bloqueado, pendiente de decisión |
 
-Ninguna de las cuatro es un proyecto de investigación. Las cuatro están sin empezar.
+Ninguna de las cuatro es un proyecto de investigación. Las cuatro están sin empezar. Y tres de las cuatro son trabajo de **Tracker**, no de Core — que es donde el análisis se aparta más de la intuición inicial.
 
 ### La pregunta que guía todo lo demás
 
