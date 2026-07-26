@@ -5,6 +5,10 @@
 
 <br>
 
+Technical writing on software architecture for the AI era, distilled from more than 20 years of practice.
+
+The current focus is the **Evolith AI Career Path** — a multi-year specialization route for evolving the Evolith suite into an AI-native platform — together with the glossary that makes its vocabulary accessible.
+
 | Document | Language | Description |
 |----------|----------|-------------|
 | **[Evolith AI Career Path: designing the AI-native suite](docs/evolith-ai-career-path-en.md)** | English | **Current.** Multi-year specialization route built from source inspection of the real Evolith Core/Tracker repos plus 10-domain research: 2–3 year career path, 12-month calendarized plan, technologies to master/know/watch/ignore, 8 Evolith-linked projects, a Core × Tracker × CLI × MCP × Agents knowledge matrix, and "The Future of Evolith". |
@@ -19,6 +23,10 @@
 <summary><b>Español</b> — Tabla de Contenidos</summary>
 
 <br>
+
+Escritos técnicos sobre arquitectura de software para la era de la IA, destilados de más de 20 años de trayectoria.
+
+El foco actual es el **Evolith AI Career Path** — una ruta de especialización plurianual para evolucionar la suite Evolith hacia una plataforma AI-native — junto con el glosario que hace accesible su vocabulario.
 
 | Documento | Idioma | Descripción |
 |-----------|--------|-------------|
