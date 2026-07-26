@@ -1,8 +1,8 @@
 # Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA
 
-> **Vocabulario de la era AI:** los términos de IA, agentes y estándares que aparecen aquí están definidos con un ejemplo en el [Glosario AI-native](glosario-ai-native-es.md).
+> **¿Un término que no conoces?** Los términos técnicos de este artículo están definidos con un ejemplo en el [Glosario de Arquitectura y SDLC](glosario-arquitectura-es.md), y los de IA, agentes y protocolos en el [Glosario AI-native](glosario-ai-native-es.md).
 
-> **Abstract:** En el desarrollo de software, estimar sin criterios de arquitectura no es ingeniería, es una apuesta de alto riesgo. Este artículo destila más de **20 años de trayectoria** para explicar cómo la convergencia del **Spec-Driven Development (SDD)**, el **AI-Driven Development (AI-DD)** y los **Arneses de Producción** transforman la incertidumbre en productividad real. Utilizando una Suite de **Supply Chain Management (SCM)** como prueba de fuego, demostramos por qué la arquitectura dicta la viabilidad del proyecto y cómo la especificación es el único lenguaje que permite a los agentes de IA construir el futuro.
+> **Abstract:** En el desarrollo de software, estimar sin criterios de arquitectura no es ingeniería, es una apuesta de alto riesgo. Este artículo destila más de **20 años de trayectoria** para explicar cómo la convergencia del **Spec-Driven Development ([SDD](glosario-arquitectura-es.md#sdd-spec-driven-development))**, el **AI-Driven Development ([AI-DD](glosario-arquitectura-es.md#ai-dd-ai-driven-development))** y los **[Arneses de Producción](glosario-arquitectura-es.md#arneses-de-producción-production-harnesses)** transforman la incertidumbre en productividad real. Utilizando una Suite de **Supply Chain Management (SCM)** como prueba de fuego, demostramos por qué la arquitectura dicta la viabilidad del proyecto y cómo la especificación es el único lenguaje que permite a los agentes de IA construir el futuro.
 
 ---
 
@@ -10,7 +10,7 @@
 
 El objetivo primordial de este artículo es erradicar la cultura del "disparo a ciegas" en la estimación de proyectos de software. Queremos demostrar que:
 
-1.  **La Arquitectura es Predictibilidad Operativa:** No es un dibujo técnico; es el mecanismo que determina si el equipo será productivo o si será devorado por la deuda técnica y el mantenimiento correctivo.
+1.  **La Arquitectura es Predictibilidad Operativa:** No es un dibujo técnico; es el mecanismo que determina si el equipo será productivo o si será devorado por la [deuda técnica](glosario-arquitectura-es.md#deuda-técnica) y el mantenimiento correctivo.
 2.  **La Predictibilidad no está peleada con la Agilidad:** Mostraremos cómo un marco de trabajo basado en especificaciones permite que la agilidad sea sostenible y escalable a largo plazo.
 3.  **La IA necesita Estructura:** Expondremos por qué el desarrollo asistido por agentes de IA solo es eficiente cuando existe un contrato arquitectónico previo que evite alucinaciones y código espagueti automático.
 
@@ -20,7 +20,7 @@ Escribimos esto porque, tras dos décadas en la industria, hemos visto cómo pro
 
 ## 1. El Dilema del Horizonte: Predictibilidad vs. Agilidad
 
-Una de las lecciones más costosas ha sido la falsa dicotomía entre agilidad y planificación. Muchos equipos confunden "ser ágiles" con "no definir la arquitectura", lo que deriva inevitablemente en una "Gran Bola de Lodo" (*Big Ball of Mud*) que detiene la innovación.
+Una de las lecciones más costosas ha sido la falsa dicotomía entre agilidad y planificación. Muchos equipos confunden "ser ágiles" con "no definir la arquitectura", lo que deriva inevitablemente en una "Gran Bola de Lodo" (*[Big Ball of Mud](glosario-arquitectura-es.md#big-ball-of-mud)*) que detiene la innovación.
 
 * **La Agilidad** mide la velocidad de entrega de valor al usuario. Es el motor.
 * **La Predictibilidad Arquitectónica** define los límites, contratos y niveles de madurez técnica. Es el chasis y el sistema de navegación.
@@ -31,27 +31,27 @@ Sin una base estructural y especificaciones claras que guíen al equipo (y a la 
 
 ## 2. La Tríada de la Productividad: Spec, AI-Driven & Harnesses
 
-Para escalar desde un producto simple hasta una suite compleja, la productividad se sostiene en tres pilares que operan en dimensiones distintas del ciclo de vida de desarrollo (SDLC). Es vital entender la comparativa exacta entre ellos: **qué son, por qué existen, cómo se aplican y para qué sirven**.
+Para escalar desde un producto simple hasta una suite compleja, la productividad se sostiene en tres pilares que operan en dimensiones distintas del ciclo de vida de desarrollo ([SDLC](glosario-arquitectura-es.md#sdlc)). Es vital entender la comparativa exacta entre ellos: **qué son, por qué existen, cómo se aplican y para qué sirven**.
 
 ### A. Spec-Driven Development (SDD): "La Ley del Sistema"
-* **Qué es:** El contrato técnico ejecutable (OpenAPI, AsyncAPI, Smithy) que rige el diseño del software. Pero es mucho más que un simple documento o un esquema de integración: es una filosofía de diseño y gobierno donde la especificación se convierte en el plano vivo y la "Fuente Única de Verdad" (SSOT) del proyecto. Actúa como el puente estricto entre las reglas de negocio y la implementación técnica, definiendo estructuras de datos, comportamientos, validaciones de estado, flujos de error y fronteras precisas *antes* de que exista el código subyacente. En el paradigma actual, es el *prompt* maestro estructurado que elimina la libre interpretación y dirige tanto a equipos humanos como a agentes de IA.
+* **Qué es:** El contrato técnico ejecutable ([OpenAPI](glosario-arquitectura-es.md#openapi), [AsyncAPI](glosario-arquitectura-es.md#asyncapi), Smithy) que rige el diseño del software. Pero es mucho más que un simple documento o un esquema de integración: es una filosofía de diseño y gobierno donde la especificación se convierte en el plano vivo y la "Fuente Única de Verdad" ([SSOT](glosario-arquitectura-es.md#ssot-single-source-of-truth)) del proyecto. Actúa como el puente estricto entre las reglas de negocio y la implementación técnica, definiendo estructuras de datos, comportamientos, validaciones de estado, flujos de error y fronteras precisas *antes* de que exista el código subyacente. En el paradigma actual, es el *prompt* maestro estructurado que elimina la libre interpretación y dirige tanto a equipos humanos como a agentes de IA.
 * **Por qué:** Porque la ambigüedad humana destruye los presupuestos. Si la especificación dicta que el módulo de "Transporte" requiere un `ID_Ruta` tipo UUID, se elimina la especulación.
 * **Cómo:** Definiendo esquemas, eventos y fronteras lógicas *antes* de escribir la primera línea de código funcional.
 * **Para qué:** Para establecer una única "Fuente de la Verdad" inmutable, permitiendo que equipos de Frontend, Backend y QA (e incluso la IA) trabajen en paralelo total sin bloquearse entre sí.
 
 ### B. AI-Driven Development (AI-DD): "El Brazo Ejecutor"
 * **Qué es:** El uso de Agentes Autónomos de IA (no solo autocompletado de código) para construir, refactorizar y verificar módulos del sistema.
-* **Por qué:** Porque el esfuerzo manual en tareas repetitivas o en la traducción de contratos a código (*boilerplate*) es ineficiente y propenso a errores.
-* **Cómo:** Utilizando protocolos como [MCP](glosario-ai-native-es.md#mcp) (Model Context Protocol) y marcos como BMAD para que la IA "lea" la arquitectura (el SDD) y genere el código respetando las reglas impuestas.
+* **Por qué:** Porque el esfuerzo manual en tareas repetitivas o en la traducción de contratos a código (*[boilerplate](glosario-arquitectura-es.md#boilerplate)*) es ineficiente y propenso a errores.
+* **Cómo:** Utilizando protocolos como [MCP](glosario-ai-native-es.md#mcp) (Model Context Protocol) y marcos como [BMAD](glosario-arquitectura-es.md#bmad) para que la IA "lea" la arquitectura (el [SDD](glosario-arquitectura-es.md#sdd-spec-driven-development)) y genere el código respetando las reglas impuestas.
 * **Para qué:** Para automatizar la construcción estructural, garantizando que el código generado no viole las fronteras del sistema, multiplicando por 10x la velocidad del desarrollador humano.
 
 ### C. Arneses de Producción (Harnesses): "La Red de Seguridad"
-* **Qué es:** La infraestructura y herramientas que envuelven la aplicación (Circuit Breakers, Feature Toggles, Contract Testing, Shadow Traffic).
+* **Qué es:** La infraestructura y herramientas que envuelven la aplicación (Circuit Breakers, Feature Toggles, [Contract Testing](glosario-arquitectura-es.md#contract-testing), [Shadow Traffic](glosario-arquitectura-es.md#shadow-traffic)).
 * **Por qué:** Porque el software y la infraestructura externa *van a fallar*. La agilidad exige un entorno donde fallar sea seguro y controlado.
-* **Cómo:** Desplegando redes de contención técnica que actúan en runtime o en el pipeline de CI/CD para aislar el error.
+* **Cómo:** Desplegando redes de contención técnica que actúan en runtime o en el pipeline de [CI/CD](glosario-arquitectura-es.md#cicd) para aislar el error.
 * **Para qué:** Para permitir despliegues diarios masivos sin pánico. Garantiza que si la IA o el humano cometen un error, o si un tercero (ej. SUNAT) se cae, el sistema principal siga operando.
 
-**La Comparativa (El Engranaje Perfecto):** El **SDD** define las reglas del juego (el *Qué*). El **AI-DD** acelera drásticamente la construcción basándose en esas reglas (el *Cómo*). Los **Arneses** protegen el resultado final frente a la realidad del mercado (el *Dónde* y el *Cuándo*). Si falta uno, la productividad colapsa por deuda técnica, lentitud humana o caídas en producción.
+**La Comparativa (El Engranaje Perfecto):** El **SDD** define las reglas del juego (el *Qué*). El **[AI-DD](glosario-arquitectura-es.md#ai-dd-ai-driven-development)** acelera drásticamente la construcción basándose en esas reglas (el *Cómo*). Los **Arneses** protegen el resultado final frente a la realidad del mercado (el *Dónde* y el *Cuándo*). Si falta uno, la productividad colapsa por [deuda técnica](glosario-arquitectura-es.md#deuda-técnica), lentitud humana o caídas en producción.
 
 ---
 
@@ -61,7 +61,7 @@ Para escalar desde un producto simple hasta una suite compleja, la productividad
 | :--- | :--- | :--- | :--- |
 | **BMAD** | AI-Driven | *Breakthrough Method for Agile AI-Driven Development*. Marco metodológico de código abierto para estructurar el desarrollo mediante agentes de IA. | [github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) |
 | **GitHub Spec-Kit** | Spec / AI-Driven | Herramientas para definir especificaciones que los agentes de IA consumen directamente en los flujos de CI/CD. | [github.com/github/spec-kit](https://github.com/github/spec-kit) |
-| **Pact.io** | Contract [Harness](glosario-ai-native-es.md#harness) | Framework de *Consumer-Driven Contracts*. Garantiza que las integraciones entre microservicios no se rompan antes de llegar a producción. | [pact.io](https://pact.io) |
+| **Pact.io** | Contract [Harness](glosario-ai-native-es.md#harness) | Framework de *[Consumer-Driven Contracts](glosario-arquitectura-es.md#consumer-driven-contracts)*. Garantiza que las integraciones entre [microservicios](glosario-arquitectura-es.md#microservicios) no se rompan antes de llegar a producción. | [pact.io](https://pact.io) |
 | **Unleash** | Prod Harness | Plataforma de gestión de *Feature Flags*. Permite operar funcionalidades en caliente, habilitando Canary Releases seguros. | [getunleash.io](https://www.getunleash.io) |
 | **Sentinel** | Resiliency Harness | Arnés de control de flujo. Implementa Circuit Breakers y resiliencia para microservicios basados en la salud del sistema. | [sentinelguard.io](https://sentinelguard.io) |
 
@@ -70,38 +70,38 @@ Para escalar desde un producto simple hasta una suite compleja, la productividad
 ## 3. Matriz Maestra: 16 Ejes de Calidad y Niveles de Madurez
 
 Esta matriz es nuestra **herramienta de dimensionamiento técnico**. Cada nivel representa el rigor de ingeniería necesario: 
-* **Nivel 1 (Inicial):** Permite salir rápido al mercado con un MVP pero acumula deuda técnica crítica desde el día 1.
+* **Nivel 1 (Inicial):** Permite salir rápido al mercado con un MVP pero acumula [deuda técnica](glosario-arquitectura-es.md#deuda-técnica) crítica desde el día 1.
 * **Nivel 2 (Gestionado):** Establece controles básicos y gestión reactiva; ideal para productos con tracción inicial que necesitan orden elemental.
-* **Nivel 3 (Definido):** Define estándares proactivos y procesos estructurados (ej. ACID, Hexagonal) que aseguran la consistencia sistémica.
-* **Nivel 4 (Optimizado):** Requiere diseño profundo, patrones avanzados (ej. Saga, Idempotencia) y automatización total, garantizando resiliencia y productividad a largo plazo.
+* **Nivel 3 (Definido):** Define estándares proactivos y procesos estructurados (ej. [ACID](glosario-arquitectura-es.md#acid), Hexagonal) que aseguran la consistencia sistémica.
+* **Nivel 4 (Optimizado):** Requiere diseño profundo, patrones avanzados (ej. Saga, [Idempotencia](glosario-arquitectura-es.md#idempotencia)) y automatización total, garantizando resiliencia y productividad a largo plazo.
 
 En un **SCM**, donde un error en el transporte puede detener la cadena de suministro, operar en Niveles 3 y 4 no es opcional, es la base de la estabilidad del negocio.
 
 | # | Eje de Calidad | Nivel 1 (Inicial) | Nivel 2 (Gestionado) | Nivel 3 (Definido) | Nivel 4 (Optimizado) | Práctica Clave |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | **Consistencia** | Sin garantías. | Manual / App-side. | ACID completa. | Idempotencia / Saga. | ACID, Saga Pattern |
-| 2 | **Seguridad** | Hardcoded. | Auth Básica / Roles. | RBAC / OAuth2. | Defensa en Profundidad. | OWASP ASVS |
-| 3 | **Disponibilidad**| Caídas frecuentes. | Redundancia básica. | Alta disponibilidad. | Auto-healing / Chaos. | Zero-Downtime |
-| 4 | **Performance** | Lento (>3s). | Opt. reactiva (DB). | Latencia bajo SLA. | Opt. predictiva / IA. | p95 < 200ms |
-| 5 | **Resiliencia** | Error 3ro detiene todo.| Reintentos fijos. | Circuit Breaker / DLQ. | Degradación controlada. | Circuit Breaker |
+| 2 | **Seguridad** | Hardcoded. | Auth Básica / Roles. | [RBAC](glosario-arquitectura-es.md#rbac--abac) / [OAuth2](glosario-arquitectura-es.md#oauth2--oidc). | Defensa en Profundidad. | [OWASP ASVS](glosario-arquitectura-es.md#owasp-asvs) |
+| 3 | **Disponibilidad**| Caídas frecuentes. | Redundancia básica. | Alta disponibilidad. | [Auto-healing](glosario-arquitectura-es.md#auto-healing) / Chaos. | [Zero-Downtime](glosario-arquitectura-es.md#zero-downtime) |
+| 4 | **Performance** | Lento (>3s). | Opt. reactiva (DB). | Latencia bajo [SLA](glosario-arquitectura-es.md#sla--slo--sli). | Opt. predictiva / IA. | [p95](glosario-arquitectura-es.md#p95--percentil) < 200ms |
+| 5 | **Resiliencia** | Error 3ro detiene todo.| Reintentos fijos. | [Circuit Breaker](glosario-arquitectura-es.md#circuit-breaker) / [DLQ](glosario-arquitectura-es.md#dlq-dead-letter-queue). | [Degradación controlada](glosario-arquitectura-es.md#degradación-controlada). | Circuit Breaker |
 | 6 | **Mantenibilidad**| Código espagueti. | Deuda técnica alta. | Hexagonal Architecture. | Refactor continuo / IA. | SOLID, Clean Arch |
-| 7 | **Desacoplamiento**| Monolito unido. | Capas técnicas. | Bounded Contexts. | Event-Driven (EDA). | AsyncAPI |
-| 8 | **Escalabilidad** | Solo vertical. | Vertical reactivo. | Horizontal automático. | Elástico (Serverless). | Kubernetes |
-| 9 | **Modularidad** | Sin fronteras. | Por paquetes. | Modular Monolith. | Microservicios extraíbles.| [ArchUnit](glosario-ai-native-es.md#archunit--deptrac--dependency-cruiser--import-linter), Modulith |
-| 10 | **Observabilidad** | Logs planos. | Centralizados. | Trazabilidad / Metrics. | AIOps / Alertas síntoma. | [OpenTelemetry](glosario-ai-native-es.md#opentelemetry-otel) |
-| 11 | **Auditabilidad** | Sin rastro. | Logs manuales. | Trail inmutable. | Event Sourcing. | Event Store |
+| 7 | **Desacoplamiento**| Monolito unido. | Capas técnicas. | Bounded Contexts. | Event-Driven ([EDA](glosario-arquitectura-es.md#eda-event-driven-architecture)). | [AsyncAPI](glosario-arquitectura-es.md#asyncapi) |
+| 8 | **Escalabilidad** | Solo vertical. | Vertical reactivo. | [Horizontal](glosario-arquitectura-es.md#escalado-vertical--horizontal) automático. | Elástico ([Serverless](glosario-arquitectura-es.md#serverless)). | [Kubernetes](glosario-arquitectura-es.md#kubernetes) |
+| 9 | **Modularidad** | Sin fronteras. | Por paquetes. | Modular Monolith. | [Microservicios](glosario-arquitectura-es.md#microservicios) extraíbles.| [ArchUnit](glosario-ai-native-es.md#archunit--deptrac--dependency-cruiser--import-linter), Modulith |
+| 10 | **[Observabilidad](glosario-arquitectura-es.md#observabilidad)** | Logs planos. | Centralizados. | Trazabilidad / Metrics. | [AIOps](glosario-arquitectura-es.md#aiops) / Alertas síntoma. | [OpenTelemetry](glosario-ai-native-es.md#opentelemetry-otel) |
+| 11 | **Auditabilidad** | Sin rastro. | Logs manuales. | Trail inmutable. | [Event Sourcing](glosario-arquitectura-es.md#event-sourcing). | Event Store |
 | 12 | **Extensibilidad** | Reescribir core. | Flags de config. | Plug-ins y APIs. | Ecosistema externo. | Plugin Architecture |
-| 13 | **Testabilidad** | Manual en prod. | Cobertura baja. | Pirámide auto. | Mutation / Contract Test. | TDD, Pact |
-| 14 | **Integrabilidad** | CSV / Manual. | SOAP/REST viejo. | API-First / OpenAPI. | API Gateway/Monetize. | Kong, OpenAPI |
-| 15 | **Gobernanza** | Caos técnico. | Wiki ignorada. | Quality Gates / ADRs. | IDP (Backstage) / IA. | ADRs, Backstage |
-| 16 | **Portabilidad** | Acoplado a HW. | Contenedores fijos. | IaC / Docker. | Cloud-agnóstico total. | Terraform, Helm |
+| 13 | **Testabilidad** | Manual en prod. | Cobertura baja. | Pirámide auto. | Mutation / Contract Test. | [TDD](glosario-arquitectura-es.md#tdd), Pact |
+| 14 | **Integrabilidad** | CSV / Manual. | SOAP/REST viejo. | [API-First](glosario-arquitectura-es.md#api-first) / [OpenAPI](glosario-arquitectura-es.md#openapi). | [API Gateway](glosario-arquitectura-es.md#api-gateway)/Monetize. | Kong, OpenAPI |
+| 15 | **Gobernanza** | Caos técnico. | Wiki ignorada. | Quality Gates / ADRs. | [IDP](glosario-arquitectura-es.md#idp-internal-developer-platform) (Backstage) / IA. | ADRs, Backstage |
+| 16 | **Portabilidad** | Acoplado a HW. | Contenedores fijos. | [IaC](glosario-arquitectura-es.md#iac-infrastructure-as-code) / Docker. | [Cloud-agnóstico](glosario-arquitectura-es.md#cloud-agnóstico) total. | Terraform, Helm |
 
 ### Ejemplo de Aplicación: Secuencia de Asignación en una Suite SCM
 
-¿Cómo decide un equipo técnico qué nivel asignar? No es una elección al azar. El Arquitecto Senior y el Technical Manager [eval](glosario-ai-native-es.md#eval)úan el **Riesgo de Negocio vs. Esfuerzo**. En un entorno de Supply Chain, la secuencia de pensamiento sigue esta lógica:
+¿Cómo decide un equipo técnico qué nivel asignar? No es una elección al azar. El Arquitecto Senior y el Technical Manager evalúan el **Riesgo de Negocio vs. Esfuerzo**. En un entorno de Supply Chain, la secuencia de pensamiento sigue esta lógica:
 1.  **Seguridad e Integrabilidad Primero:** "Si nos hackean o no podemos hablar con Aduanas, el puerto se detiene". **Resultado: Nivel 4.**
 2.  **Resiliencia:** "Si el sistema cae 5 minutos, perdemos 100 camiones en espera". **Resultado: Nivel 4.**
-3.  **Consistencia:** "Los datos financieros deben ser exactos, pero aceptamos consistencia eventual en reportes no críticos". **Resultado: Nivel 3.**
+3.  **Consistencia:** "Los datos financieros deben ser exactos, pero aceptamos [consistencia eventual](glosario-arquitectura-es.md#consistencia-eventual) en reportes no críticos". **Resultado: Nivel 3.**
 4.  **Escalabilidad:** "El volumen de transacciones es alto pero predecible; no necesitamos escalado elástico a cero todavía". **Resultado: Nivel 2.**
 
 Esta es la configuración resultante para los módulos críticos:
@@ -125,26 +125,26 @@ Estimar desarrollo de software basándose únicamente en "funcionalidades de usu
 | # | Entregable | Importancia | Impacto en la Productividad y Justificación Técnica |
 | :--- | :--- | :--- | :--- |
 | 1 | **Mapa de Bounded Contexts** | **Crítico** | Evita el acoplamiento masivo. Define la independencia de los equipos para que puedan trabajar en paralelo. |
-| 2 | **Platform Core** | **Crítico** | Centraliza capacidades base (Identidad, Eventos). Ahorra miles de horas al evitar que los equipos dupliquen esfuerzo. |
+| 2 | **[Platform Core](glosario-arquitectura-es.md#platform-core)** | **Crítico** | Centraliza capacidades base (Identidad, Eventos). Ahorra miles de horas al evitar que los equipos dupliquen esfuerzo. |
 | 3 | **Diagrama C4 (Lvl 1-3)** | Muy Alto | El plano visual indispensable para alinear a todos (desarrolladores, DevOps y negocio) sobre cómo se construye el sistema. |
-| 4 | **Estrategia de Base de Datos** | Muy Alto | Garantiza la independencia real. Diseñar mal el aislamiento de datos (DB-per-module) detiene la productividad futura. |
+| 4 | **Estrategia de Base de Datos** | Muy Alto | Garantiza la independencia real. Diseñar mal el aislamiento de datos ([DB-per-module](glosario-arquitectura-es.md#db-per-module-esquema-por-contexto)) detiene la productividad futura. |
 | 5 | **Modelo Dominio de Eventos** | Muy Alto | El contrato para el desacoplamiento real. Vital para orquestar la asincronía en suites complejas. |
-| 6 | **Observabilidad E2E** | Muy Alto | Productividad en soporte: reduce el tiempo de diagnóstico de errores de días a minutos. |
+| 6 | **[Observabilidad](glosario-arquitectura-es.md#observabilidad) E2E** | Muy Alto | Productividad en soporte: reduce el tiempo de diagnóstico de errores de días a minutos. |
 | 7 | **Identity & Auth Strategy** | Alto | Centraliza la seguridad. Construirlo mal requiere reescribir todos los módulos más adelante. |
-| 8 | **NFRs Documentados** | Alto | Establece los umbrales medibles (SLA/SLO) que la arquitectura (y la IA) deben cumplir. |
-| 9 | **Master Data (MDM)** | Alto | Garantiza la integridad. Evita que los equipos gasten tiempo sincronizando datos inconsistentes entre módulos. |
-| 10 | **Versionado de APIs** | Alto | Permite a los equipos evolucionar sus servicios a su propio ritmo sin romper a los consumidores. |
+| 8 | **NFRs Documentados** | Alto | Establece los umbrales medibles ([SLA](glosario-arquitectura-es.md#sla--slo--sli)/SLO) que la arquitectura (y la IA) deben cumplir. |
+| 9 | **Master Data ([MDM](glosario-arquitectura-es.md#mdm-master-data-management))** | Alto | Garantiza la integridad. Evita que los equipos gasten tiempo sincronizando datos inconsistentes entre módulos. |
+| 10 | **[Versionado de APIs](glosario-arquitectura-es.md#versionado-de-apis)** | Alto | Permite a los equipos evolucionar sus servicios a su propio ritmo sin romper a los consumidores. |
 | 11 | **Sincronización Multidominio** | Alto | Define cómo fluye la "verdad" asíncrona entre micro-sistemas, evitando bloqueos operativos. |
 | 12 | **ADRs Iniciales** | Medio-Alto | Evita la pérdida de tiempo discutiendo decisiones ya tomadas y previene errores cíclicos por falta de contexto. |
-| 13 | **Contract Testing** | Medio-Alto | Red de seguridad en el pipeline. Permite a los desarrolladores desplegar con confianza sin depender de otros. |
-| 14 | **Infraestructura (IaC)** | Medio | Automatiza el despliegue de entornos. Elimina el clásico problema de "en mi máquina sí funciona". |
+| 13 | **[Contract Testing](glosario-arquitectura-es.md#contract-testing)** | Medio-Alto | Red de seguridad en el pipeline. Permite a los desarrolladores desplegar con confianza sin depender de otros. |
+| 14 | **Infraestructura ([IaC](glosario-arquitectura-es.md#iac-infrastructure-as-code))** | Medio | Automatiza el despliegue de entornos. Elimina el clásico problema de "en mi máquina sí funciona". |
 | 15 | **Plan de Trabajo Desglosado** | Medio | **Consecuencia final.** Es la hoja de ruta estimable porque está respaldada por los 14 diseños estructurales previos. |
 
 ---
 
 ## 5. Conclusión: La Arquitectura como Motor de Productividad
 
-Tras **20 años** de trayectoria, la conclusión técnica es clara: la arquitectura no retrasa el desarrollo, lo viabiliza. El uso de **Spec-Driven Development** garantiza que el equipo humano y los agentes de IA hablen el mismo lenguaje técnico, mientras que los **Arneses de Producción** aseguran que los despliegues ágiles no comprometan la estabilidad de la operación.
+Tras **20 años** de trayectoria, la conclusión técnica es clara: la arquitectura no retrasa el desarrollo, lo viabiliza. El uso de **Spec-Driven Development** garantiza que el equipo humano y los agentes de IA hablen el mismo lenguaje técnico, mientras que los **[Arneses de Producción](glosario-arquitectura-es.md#arneses-de-producción-production-harnesses)** aseguran que los despliegues ágiles no comprometan la estabilidad de la operación.
 
 ### Próximos Pasos: Recursos, Código y Ejemplos
 Estaré entregando periódicamente más artículos, referencias técnicas profundas, ejemplos de código real y arneses implementados en mi nuevo repositorio dedicado exclusivamente a estos temas:
