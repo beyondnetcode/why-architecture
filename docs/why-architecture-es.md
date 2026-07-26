@@ -1,5 +1,7 @@
 # Arquitectura: El Cimiento de la Estimación y la Productividad en la Era de la IA
 
+> **Vocabulario de la era AI:** los términos de IA, agentes y estándares que aparecen aquí están definidos con un ejemplo en el [Glosario AI-native](glosario-ai-native-es.md).
+
 > **Abstract:** En el desarrollo de software, estimar sin criterios de arquitectura no es ingeniería, es una apuesta de alto riesgo. Este artículo destila más de **20 años de trayectoria** para explicar cómo la convergencia del **Spec-Driven Development (SDD)**, el **AI-Driven Development (AI-DD)** y los **Arneses de Producción** transforman la incertidumbre en productividad real. Utilizando una Suite de **Supply Chain Management (SCM)** como prueba de fuego, demostramos por qué la arquitectura dicta la viabilidad del proyecto y cómo la especificación es el único lenguaje que permite a los agentes de IA construir el futuro.
 
 ---
@@ -40,7 +42,7 @@ Para escalar desde un producto simple hasta una suite compleja, la productividad
 ### B. AI-Driven Development (AI-DD): "El Brazo Ejecutor"
 * **Qué es:** El uso de Agentes Autónomos de IA (no solo autocompletado de código) para construir, refactorizar y verificar módulos del sistema.
 * **Por qué:** Porque el esfuerzo manual en tareas repetitivas o en la traducción de contratos a código (*boilerplate*) es ineficiente y propenso a errores.
-* **Cómo:** Utilizando protocolos como MCP (Model Context Protocol) y marcos como BMAD para que la IA "lea" la arquitectura (el SDD) y genere el código respetando las reglas impuestas.
+* **Cómo:** Utilizando protocolos como [MCP](glosario-ai-native-es.md#mcp) (Model Context Protocol) y marcos como BMAD para que la IA "lea" la arquitectura (el SDD) y genere el código respetando las reglas impuestas.
 * **Para qué:** Para automatizar la construcción estructural, garantizando que el código generado no viole las fronteras del sistema, multiplicando por 10x la velocidad del desarrollador humano.
 
 ### C. Arneses de Producción (Harnesses): "La Red de Seguridad"
@@ -59,7 +61,7 @@ Para escalar desde un producto simple hasta una suite compleja, la productividad
 | :--- | :--- | :--- | :--- |
 | **BMAD** | AI-Driven | *Breakthrough Method for Agile AI-Driven Development*. Marco metodológico de código abierto para estructurar el desarrollo mediante agentes de IA. | [github.com/bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) |
 | **GitHub Spec-Kit** | Spec / AI-Driven | Herramientas para definir especificaciones que los agentes de IA consumen directamente en los flujos de CI/CD. | [github.com/github/spec-kit](https://github.com/github/spec-kit) |
-| **Pact.io** | Contract Harness | Framework de *Consumer-Driven Contracts*. Garantiza que las integraciones entre microservicios no se rompan antes de llegar a producción. | [pact.io](https://pact.io) |
+| **Pact.io** | Contract [Harness](glosario-ai-native-es.md#harness) | Framework de *Consumer-Driven Contracts*. Garantiza que las integraciones entre microservicios no se rompan antes de llegar a producción. | [pact.io](https://pact.io) |
 | **Unleash** | Prod Harness | Plataforma de gestión de *Feature Flags*. Permite operar funcionalidades en caliente, habilitando Canary Releases seguros. | [getunleash.io](https://www.getunleash.io) |
 | **Sentinel** | Resiliency Harness | Arnés de control de flujo. Implementa Circuit Breakers y resiliencia para microservicios basados en la salud del sistema. | [sentinelguard.io](https://sentinelguard.io) |
 
@@ -85,8 +87,8 @@ En un **SCM**, donde un error en el transporte puede detener la cadena de sumini
 | 6 | **Mantenibilidad**| Código espagueti. | Deuda técnica alta. | Hexagonal Architecture. | Refactor continuo / IA. | SOLID, Clean Arch |
 | 7 | **Desacoplamiento**| Monolito unido. | Capas técnicas. | Bounded Contexts. | Event-Driven (EDA). | AsyncAPI |
 | 8 | **Escalabilidad** | Solo vertical. | Vertical reactivo. | Horizontal automático. | Elástico (Serverless). | Kubernetes |
-| 9 | **Modularidad** | Sin fronteras. | Por paquetes. | Modular Monolith. | Microservicios extraíbles.| ArchUnit, Modulith |
-| 10 | **Observabilidad** | Logs planos. | Centralizados. | Trazabilidad / Metrics. | AIOps / Alertas síntoma. | OpenTelemetry |
+| 9 | **Modularidad** | Sin fronteras. | Por paquetes. | Modular Monolith. | Microservicios extraíbles.| [ArchUnit](glosario-ai-native-es.md#archunit--deptrac--dependency-cruiser--import-linter), Modulith |
+| 10 | **Observabilidad** | Logs planos. | Centralizados. | Trazabilidad / Metrics. | AIOps / Alertas síntoma. | [OpenTelemetry](glosario-ai-native-es.md#opentelemetry-otel) |
 | 11 | **Auditabilidad** | Sin rastro. | Logs manuales. | Trail inmutable. | Event Sourcing. | Event Store |
 | 12 | **Extensibilidad** | Reescribir core. | Flags de config. | Plug-ins y APIs. | Ecosistema externo. | Plugin Architecture |
 | 13 | **Testabilidad** | Manual en prod. | Cobertura baja. | Pirámide auto. | Mutation / Contract Test. | TDD, Pact |
@@ -96,7 +98,7 @@ En un **SCM**, donde un error en el transporte puede detener la cadena de sumini
 
 ### Ejemplo de Aplicación: Secuencia de Asignación en una Suite SCM
 
-¿Cómo decide un equipo técnico qué nivel asignar? No es una elección al azar. El Arquitecto Senior y el Technical Manager evalúan el **Riesgo de Negocio vs. Esfuerzo**. En un entorno de Supply Chain, la secuencia de pensamiento sigue esta lógica:
+¿Cómo decide un equipo técnico qué nivel asignar? No es una elección al azar. El Arquitecto Senior y el Technical Manager [eval](glosario-ai-native-es.md#eval)úan el **Riesgo de Negocio vs. Esfuerzo**. En un entorno de Supply Chain, la secuencia de pensamiento sigue esta lógica:
 1.  **Seguridad e Integrabilidad Primero:** "Si nos hackean o no podemos hablar con Aduanas, el puerto se detiene". **Resultado: Nivel 4.**
 2.  **Resiliencia:** "Si el sistema cae 5 minutos, perdemos 100 camiones en espera". **Resultado: Nivel 4.**
 3.  **Consistencia:** "Los datos financieros deben ser exactos, pero aceptamos consistencia eventual en reportes no críticos". **Resultado: Nivel 3.**

@@ -1,5 +1,7 @@
 # Architecture: The Foundation of Estimation and Productivity in the AI Era
 
+> **AI-era vocabulary:** the AI, agent and standards terms appearing here are defined with an example in the [AI-native Glossary](glossary-ai-native-en.md).
+
 > **Abstract:** In software development, estimating without architectural criteria is not engineering; it's a high-risk gamble. This article distills over **20 years of experience** to explain how the convergence of **Spec-Driven Development (SDD)**, **AI-Driven Development (AI-DD)**, and **Production Harnesses** transforms uncertainty into real productivity. Using a **Supply Chain Management (SCM)** Suite as a trial by fire, we demonstrate why architecture dictates project viability and how specification is the only language that allows AI agents to build the future.
 
 ---
@@ -40,7 +42,7 @@ To scale from a simple product to a complex suite, productivity rests on three p
 ### B. AI-Driven Development (AI-DD): "The Executing Arm"
 * **What it is:** The use of Autonomous AI Agents (not just code autocompletion) to build, refactor, and verify system modules.
 * **Why:** Because manual effort in repetitive tasks or in translating contracts to code (*boilerplate*) is inefficient and error-prone.
-* **How:** Using protocols like MCP (Model Context Protocol) and frameworks like **BMAD** so that the AI "reads" the architecture (the SDD) and generates code respecting the imposed rules.
+* **How:** Using protocols like [MCP](glossary-ai-native-en.md#mcp) (Model Context Protocol) and frameworks like **BMAD** so that the AI "reads" the architecture (the SDD) and generates code respecting the imposed rules.
 * **What it's for:** To automate structural construction, multiplying the human developer's speed by 10x while ensuring the generated code does not violate system boundaries.
 
 ### C. Production Harnesses: "The Safety Net"
@@ -63,7 +65,7 @@ To scale from a simple product to a complex suite, productivity rests on three p
 * *Description:* Tools to define specifications consumed by AI agents directly in CI/CD workflows.
 * *Reference:* [github.com/github/spec-kit](https://github.com/github/spec-kit)
 
-🔹 **Pact.io (Focus: Contract Harness)**
+🔹 **Pact.io (Focus: Contract [Harness](glossary-ai-native-en.md#harness))**
 * *Description:* Framework for *Consumer-Driven Contracts*. Ensures integrations between microservices don't break before reaching production.
 * *Reference:* [pact.io](https://pact.io)
 
@@ -97,8 +99,8 @@ In an **SCM**, where a transport error can stop the supply chain, operating at L
 | 6 | **Maintainability**| Spaghetti code. | High tech debt. | Hexagonal Architecture. | Continuous refactor / IA. | SOLID, Clean Arch |
 | 7 | **Decoupling**| Tightly coupled monolith.| Tech layers. | Bounded Contexts. | Event-Driven (EDA). | AsyncAPI |
 | 8 | **Scalability** | Vertical only. | Reactive vertical. | Auto horizontal. | Elastic (Serverless). | Kubernetes |
-| 9 | **Modularity** | No boundaries. | By packages. | Modular Monolith. | Extractable microservices.| ArchUnit, Modulith |
-| 10 | **Observability** | Flat logs. | Centralized. | Traceability / Metrics. | AIOps / Symptom alerts. | OpenTelemetry |
+| 9 | **Modularity** | No boundaries. | By packages. | Modular Monolith. | Extractable microservices.| [ArchUnit](glossary-ai-native-en.md#archunit--deptrac--dependency-cruiser--import-linter), Modulith |
+| 10 | **Observability** | Flat logs. | Centralized. | Traceability / Metrics. | AIOps / Symptom alerts. | [OpenTelemetry](glossary-ai-native-en.md#opentelemetry-otel) |
 | 11 | **Auditability** | No trail. | Manual logs. | Immutable trail. | Event Sourcing. | Event Store |
 | 12 | **Extensibility** | Rewrite core. | Config flags. | Plug-ins and APIs. | External ecosystem. | Plugin Architecture |
 | 13 | **Testability** | Manual in prod. | Low coverage. | Auto pyramid. | Mutation / Contract Test. | TDD, Pact |
