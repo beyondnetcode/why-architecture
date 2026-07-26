@@ -1,6 +1,6 @@
 # Why Architecture?
 
-**En español:** [Leer en Español](#-versión-en-español)
+**En español:** [Leer en Español](#versión-en-español)
 
 ---
 
