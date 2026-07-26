@@ -40,7 +40,7 @@ An operation the **model** decides to invoke, with a declared input schema.
 *Example:* `evolith-drift-detect` — the agent chooses to call it when it suspects drift.
 
 ### Resource (MCP)
-URI-addressable content the **application** decides to put into context, without spending a model decision.
+Content with an address of its own — like a URL — that the **application** decides to put into context, without spending a model decision.
 *Example:* `evolith://adr/0101` returns the ADR text as context, with no need for the model to "choose" to read it.
 
 ### Prompt (MCP)
@@ -137,8 +137,12 @@ Requires the authorization response to carry the issuer and the client to valida
 The modern alternative to dynamic registration: the client identifies itself with a URL serving its own metadata.
 *Example:* it replaces DCR, which is now deprecated.
 
+### OAuth 2.0
+The standard by which one service grants another limited access to something of yours **without handing over your password**.
+*Example:* "sign in with GitHub" — GitHub confirms who you are and issues a scoped, revocable permission, not your credentials.
+
 ### DCR *(Dynamic Client Registration, RFC 7591)*
-The classic mechanism by which an OAuth client self-registers with the authorization server.
+The classic mechanism by which an application registers itself with the authorization server, with nobody enrolling it by hand.
 *Example:* deprecated in MCP in favour of CIMD.
 
 ### RFC 8693 *(Token Exchange)*
@@ -146,7 +150,7 @@ The standard for swapping one token for another — the technical basis of "on-b
 *Example:* an agent exchanges its service token for one acting on behalf of a specific user.
 
 ### ID-JAG
-An IETF profile in progress for cross-application access, where the corporate identity provider acts as the decision point.
+A proposal in progress at the IETF — the body that standardises internet protocols — for cross-application access, where the corporate identity provider is the one that decides.
 *Example:* the only delegated-agent-identity proposal adopted by a working group; the rest remain individual drafts.
 
 ### SPIFFE / SPIRE
@@ -162,8 +166,8 @@ Encryption guaranteeing confidentiality and integrity at once: if anyone alters 
 *Example:* sealing `requestState` so the client can neither read nor modify it.
 
 ### COSE
-A compact binary format for signing and encrypting objects — the JOSE/JWT equivalent over CBOR.
-*Example:* signing every gate decision so its authorship is verifiable years later.
+A compact, standard format for **signing** a piece of data, so anyone can later check who issued it and that nobody altered it.
+*Example:* every gate decision is signed; years later it remains provable who took it, even if the system that produced it is gone.
 
 ### PDP *(Policy Decision Point)*
 A component that answers "allow / deny" for a request, separate from whoever executes it.
@@ -192,7 +196,7 @@ Metadata recording where a datum came from: who or what produced it, with which 
 *Example:* `{collectedBy:"structural-review", adapterVersion:"1.2", artifactHash:"sha256:..."}`.
 
 ### PROV-O
-A W3C ontology modelling provenance with three classes: Entity, Activity and Agent.
+A standard W3C vocabulary — from the consortium that defines web standards — for describing provenance with three pieces: Entity, Activity and Agent.
 *Example:* "this evidence (Entity) was produced by this evaluation (Activity) run by this agent (Agent)".
 
 ### SCITT *(RFC 9943)*
@@ -479,7 +483,7 @@ A system where a model decides which tools to use and in what order to reach a g
 
 ### Agentic
 An adjective for systems where initiative sits with the model rather than a predefined flow.
-*Example:* "agentic SDLC" = a lifecycle where part of the work is executed by agents.
+*Example:* "agentic SDLC" = a software lifecycle where part of the work is executed by agents.
 
 ### ReAct loop
 The classic reason→act→observe loop, repeated until done.
@@ -526,6 +530,14 @@ Stores giving an agent persistent memory across sessions.
 ## 9. Governance and compliance
 
 *What this family is about: the external rules — regulators, certifiable standards, threat catalogues — you must be able to demonstrate conformance against. Nothing is invented here: you adopt the taxonomy an auditor already recognises.*
+
+### ADR *(Architecture Decision Record)*
+A short note recording an architectural decision: the context, the alternatives, what was decided and what it costs.
+*Example:* it stops the team re-litigating every six months why that choice was made. In Evolith, ADRs are the raw material of the rules.
+
+### SDLC *(software development lifecycle)*
+The full journey of a software product, from idea to production and the operation that follows.
+*Example:* discovery → design → construction → testing → release. It is the ground Evolith governs end to end.
 
 ### NIST AI RMF
 A voluntary US framework organising AI risk into functions (govern, map, measure, manage).

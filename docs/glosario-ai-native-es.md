@@ -40,7 +40,7 @@ Operación que el **modelo** decide invocar, con esquema de entrada declarado.
 *Ejemplo:* `evolith-drift-detect` — el agente decide llamarla cuando cree que hay drift.
 
 ### Resource (MCP)
-Contenido direccionable por URI que la **aplicación** decide meter en contexto, sin gastar una decisión del modelo.
+Contenido con una dirección propia —como una URL— que la **aplicación** decide meter en el contexto, sin gastar una decisión del modelo.
 *Ejemplo:* `evolith://adr/0101` devuelve el texto del ADR como contexto, sin que el modelo tenga que "elegir" leerlo.
 
 ### Prompt (MCP)
@@ -137,8 +137,12 @@ Obliga a que la respuesta de autorización incluya el emisor y que el cliente lo
 Alternativa moderna al registro dinámico: el cliente se identifica con una URL que sirve sus propios metadatos.
 *Ejemplo:* sustituye a DCR, que queda depreciado.
 
+### OAuth 2.0
+Estándar por el que un servicio concede a otro acceso limitado a algo tuyo **sin entregarle tu contraseña**.
+*Ejemplo:* "iniciar sesión con GitHub" — GitHub confirma quién eres y entrega un permiso acotado y revocable, no tus credenciales.
+
 ### DCR *(Dynamic Client Registration, RFC 7591)*
-Mecanismo clásico por el que un cliente OAuth se da de alta solo ante el servidor de autorización.
+Mecanismo clásico por el que una aplicación se da de alta sola ante el servidor de autorización, sin que nadie la registre a mano.
 *Ejemplo:* depreciado en MCP a favor de CIMD.
 
 ### RFC 8693 *(Token Exchange)*
@@ -146,7 +150,7 @@ Estándar para canjear un token por otro, base técnica de la delegación "en no
 *Ejemplo:* un agente cambia su token de servicio por uno que actúa en nombre de un usuario concreto.
 
 ### ID-JAG
-Perfil en desarrollo en el IETF para acceso entre aplicaciones, donde el proveedor de identidad corporativo actúa como punto de decisión.
+Propuesta en desarrollo en el IETF —el organismo que estandariza los protocolos de internet— para el acceso entre aplicaciones, donde el proveedor de identidad corporativo es quien decide.
 *Ejemplo:* la única propuesta de identidad delegada de agentes adoptada por un grupo de trabajo; el resto sigue en borrador individual.
 
 ### SPIFFE / SPIRE
@@ -162,8 +166,8 @@ Cifrado que garantiza a la vez confidencialidad e integridad: si alguien altera 
 *Ejemplo:* sellar el `requestState` para que el cliente no pueda leerlo ni modificarlo.
 
 ### COSE
-Formato binario compacto para firmar y cifrar objetos, el equivalente a JOSE/JWT pero sobre CBOR.
-*Ejemplo:* firmar cada decisión de gate para que su autoría sea verificable años después.
+Formato estándar y compacto para **firmar** un dato, de modo que cualquiera pueda comprobar más tarde quién lo emitió y que nadie lo ha alterado.
+*Ejemplo:* se firma cada decisión de gate; años después sigue siendo demostrable quién la tomó, aunque el sistema que la produjo ya no exista.
 
 ### PDP *(Policy Decision Point)*
 Componente que responde "permitido / denegado" ante una petición, separado de quien la ejecuta.
@@ -192,7 +196,7 @@ Metadato que registra de dónde viene un dato: quién o qué lo produjo, con qu�
 *Ejemplo:* `{collectedBy:"structural-review", adapterVersion:"1.2", artifactHash:"sha256:..."}`.
 
 ### PROV-O
-Ontología del W3C que modela procedencia con tres clases: Entidad, Actividad y Agente.
+Vocabulario estándar del W3C —el consorcio que define los estándares de la web— para describir procedencia con tres piezas: Entidad, Actividad y Agente.
 *Ejemplo:* "esta evidencia (Entidad) la produjo esta evaluación (Actividad) ejecutada por este agente (Agente)".
 
 ### SCITT *(RFC 9943)*
@@ -479,7 +483,7 @@ Sistema en el que un modelo decide qué herramientas usar y en qué orden para l
 
 ### Agentic
 Adjetivo para sistemas donde la iniciativa la lleva el modelo y no un flujo predefinido.
-*Ejemplo:* "agentic SDLC" = ciclo de vida donde parte del trabajo lo ejecutan agentes.
+*Ejemplo:* "agentic SDLC" = un ciclo de vida del software donde parte del trabajo lo ejecutan agentes.
 
 ### ReAct loop
 Bucle clásico razonar→actuar→observar, repetido hasta terminar.
@@ -526,6 +530,14 @@ Almacenes que dan al agente memoria persistente entre sesiones.
 ## 9. Governance y cumplimiento
 
 *De qué va esta familia: las normas externas —reguladores, estándares certificables, catálogos de amenazas— frente a las que hay que poder demostrar conformidad. Aquí no se inventa taxonomía: se adopta la que ya reconoce un auditor.*
+
+### ADR *(Architecture Decision Record)*
+Nota breve que registra una decisión de arquitectura: el contexto, las alternativas, lo que se decidió y qué consecuencias trae.
+*Ejemplo:* evita que el equipo vuelva a discutir cada seis meses por qué se eligió aquello. En Evolith los ADR son la materia prima de las reglas.
+
+### SDLC *(ciclo de vida del software)*
+El recorrido completo de un producto de software, de la idea a producción y su operación posterior.
+*Ejemplo:* descubrimiento → diseño → construcción → pruebas → publicación. Es el terreno que Evolith gobierna de punta a punta.
 
 ### NIST AI RMF
 Marco voluntario estadounidense que organiza el riesgo de IA en funciones (gobernar, mapear, medir, gestionar).
