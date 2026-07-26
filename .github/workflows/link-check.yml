@@ -1,0 +1,72 @@
+name: Link check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Weekly, Mondays 06:00 UTC — only the external job has anything to do here.
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: link-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Blocking. No network, so it is fast and cannot flake.
+  # Catches the regression that motivated this workflow: editing a heading
+  # changes its GitHub anchor and silently breaks every link pointing at it.
+  internal:
+    name: Internal links and heading anchors
+    runs-on: ubuntu-latest
+    if: github.event_name != 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: .github/scripts/package-lock.json
+
+      - name: Install checker dependencies
+        working-directory: .github/scripts
+        run: npm ci
+
+      - name: Check internal links
+        run: node .github/scripts/check-links.mjs
+
+  # Non-blocking and off the PR path. External URLs rot for reasons outside this
+  # repository — an arXiv paper moving must never turn a docs PR red. Runs weekly
+  # and on demand; read the job summary for the report.
+  external:
+    name: External URLs (advisory)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pin to a commit SHA instead of a tag if you want this hardened against
+      # a compromised upstream release.
+      - name: Check external URLs
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --include-verbatim
+            --exclude-path .github
+            --accept 200,206,429
+            --max-retries 2
+            --timeout 20
+            './**/*.md'
+          output: lychee-report.md
+          # Advisory only: never fail the run.
+          fail: false
+
+      - name: Publish report
+        if: always()
+        run: cat lychee-report.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || echo 'No report produced.' >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,12 @@
+{
+  "name": "why-architecture-ci-scripts",
+  "private": true,
+  "type": "module",
+  "description": "CI-only helpers. Kept out of the repository root so the docs repo stays dependency-free.",
+  "scripts": {
+    "check-links": "node check-links.mjs"
+  },
+  "dependencies": {
+    "github-slugger": "2.0.0"
+  }
+}
