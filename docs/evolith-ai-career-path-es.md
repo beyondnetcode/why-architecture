@@ -6,27 +6,104 @@
 
 ---
 
-## 0. Resumen ejecutivo — la tesis corregida
+## 0. Para entender esto en cinco minutos
 
-La propuesta anterior asumía que el cuello de botella de Evolith era **conocimiento de IA**. No lo es.
+*Esta sección no supone conocimientos técnicos. Si solo vas a leer una parte del documento, lee esta.*
 
-El cuello de botella es que **el dato que constituye el foso no existe todavía, y cada día que el sistema corre sin instrumentar se destruye permanentemente parte de él**. Las tres o cuatro decisiones de mayor impacto en los próximos doce meses casi no requieren IA nueva: tipar una columna, definir códigos de salida, publicar un Check Run, firmar una decisión.
+### La obra que nadie apunta en el cuaderno
 
-De ahí se siguen cinco correcciones fuertes:
+Construir software se parece a levantar un edificio. Hay unos planos, hay albañiles, y hay un inspector que comprueba en cada etapa que lo construido se corresponde con lo aprobado. **Evolith es ese inspector**, y su promesa es que las decisiones de arquitectura se cumplan de verdad.
 
-| # | Corrección | Por qué |
-|---|---|---|
-| **1** | **El foso no es el grafo de conocimiento. Es el registro de procedencia atribuible.** | La lineage que Evolith necesita es un *time series con joins*, no un problema de traversal. El grafo semántico sobre prosa de ADRs importa no-determinismo al único sistema cuya promesa es el veredicto reproducible. |
-| **2** | **Determinismo ≠ corrección.** Evolith bloquea merges sin haber medido nunca su tasa de falsos positivos. | El día que un gate con IA bloquee mal, la culpa irá al [LLM](glosario-ai-native-es.md#llm) y no habrá dato para demostrar lo contrario. **La calibración es la licencia para usar IA en absoluto.** |
-| **3** | **El wedge apunta al drift equivocado.** | La evidencia longitudinal 2026 dice que el daño de la IA es duplicación, refactor colapsado y mantenimiento abandonado — **todo legal en términos de imports**. Las 167 reglas de frontera son ciegas a ello. Y el 2-mar-2026 Sonar sacó GA la mitad detectora del wedge, gratis y auto-descubierta. |
-| **4** | **[MCP](glosario-ai-native-es.md#mcp) es la superficie de control más débil, no la más fuerte.** | MCP es cooperativo con el cliente: el agente que no lo invoca queda íntegramente ingobernado. El control real vive donde el agente no puede esquivarlo: **código de salida, hook `PreToolUse`, [Checks API](glosario-ai-native-es.md#checks-api--check-run), gateway**. |
-| **5** | **La secuencia de aprendizaje se invierte.** | Tu hipótesis empieza en fundamentos de IA y termina en governance. Para *este* producto el orden correcto es: **instrumentar → medir → recién entonces generar**. |
+Lo que cambió en los últimos dos años es quién pone los ladrillos. Ahora hay **albañiles robot** —agentes de IA— que levantan muros a una velocidad que ningún equipo humano alcanza. Son rápidos, obedientes y no se cansan. Y no miran los planos a menos que alguien se los imponga.
 
-**La pregunta que debe guiar la ruta no es "¿qué IA necesito aprender?" sino:**
+Hasta aquí, la tesis original de Evolith es correcta y sigue siéndolo.
 
-> **¿Qué debo dominar para que Evolith pueda afirmar, con evidencia firmada y una tasa de error publicada, cómo evoluciona una arquitectura cuando humanos y agentes la escriben juntos?**
+El hallazgo de esta revisión es otro, y es incómodo: **la obra lleva meses funcionando y el cuaderno de bitácora está en blanco.** No porque falte tecnología —el inspector está bien construido, con años de ingeniería sólida detrás— sino porque **nunca se ha puesto en marcha en una obra real**. Cero inspecciones registradas. Cero páginas escritas.
 
-Todo lo demás — [RAG](glosario-ai-native-es.md#rag), grafos, agentes, orquestación — es medio o distracción según sirva o no a esa frase.
+Y aquí está el detalle que lo convierte en urgente: **el cuaderno solo se puede escribir mientras la obra avanza.** Dentro de un año nadie podrá reconstruir quién puso cada ladrillo.
+
+### Los cinco hallazgos, en llano
+
+**1 · Lo valioso es el cuaderno, no un plano más sofisticado.**
+
+El plan anterior proponía construir una maqueta inteligente del edificio: un mapa que relacionara todo con todo. Es la respuesta intelectualmente atractiva, y es la equivocada.
+
+Lo que hace insustituible a un inspector no es su maqueta. Es su cuaderno: *quién* hizo esto, *cuándo*, y *bajo qué versión de la normativa vigente ese día*. Eso no lo tiene ningún competidor, y no se puede copiar — solo acumular.
+
+> **El caso concreto.** Un estudio de 2026 sobre 180 millones de repositorios intentó averiguar, a posteriori, qué código había escrito una IA. El método que usa prácticamente toda la industria recuperó **3 de cada 100 casos**. La conclusión es brutal en su simplicidad: o lo apuntas en el momento, o lo pierdes para siempre.
+
+**2 · El inspector nunca ha medido cuántas veces se equivoca.**
+
+Evolith rechaza trabajo. Bloquea entregas que no cumplen. Pero nadie ha medido nunca **con qué frecuencia rechaza trabajo que en realidad estaba bien**.
+
+Es el número que decide si el producto se usa o se desactiva. Un inspector que para una de cada tres entregas correctas no se corrige: se le rodea. El equipo encuentra la forma de no pasar por él.
+
+Y hay un riesgo mayor, de reputación. El día que Evolith añada IA a sus juicios, el primer bloqueo equivocado se le echará a la IA — y no habrá ni un dato para demostrar que el sistema ya fallaba antes en la misma proporción.
+
+> **Por eso la frase clave del documento es esta:** medir no es un requisito burocrático, es **el permiso para usar IA en absoluto**. Sin una cifra publicada, un juicio automático es una opinión con formato bonito.
+
+**3 · Está vigilando el daño equivocado.**
+
+Evolith comprueba que los muros estén donde dicen los planos. Es una comprobación legítima… y no es donde los robots hacen daño.
+
+La evidencia medida sobre cientos de millones de cambios reales dice que el deterioro que introduce la IA es otro: **repite el mismo trabajo en ocho sitios ligeramente distintos en vez de reutilizar lo que ya existe, deja de reordenar lo que va quedando desordenado, y no vuelve nunca a reparar lo viejo.**
+
+Traducido a la obra: los muros están todos exactamente donde el plano dice. Pero se han usado ocho morteros distintos para el mismo tabique, nadie retira los andamios y ninguna sección antigua se repasa. **Una inspección de "muros en su sitio" aprueba esa obra sin una sola objeción.**
+
+> **Y el reloj corre.** El 2 de marzo de 2026 un competidor grande (Sonar) empezó a regalar exactamente esa comprobación de "muros en su sitio": automática, sin configuración, en cinco lenguajes, y vendida explícitamente contra el desorden que causa la IA. La mitad detectora de la ventaja de Evolith pasó a ser gratuita.
+
+**4 · La puerta en la que más se confía es la que se puede rodear.**
+
+Hoy el control principal de Evolith es un servicio que el agente **puede consultar** antes de escribir código. El problema está en esas dos palabras: puede consultar. Nada le obliga.
+
+Es un reglamento apoyado en una mesa a la entrada de la obra. El robot que no lo abre queda completamente sin gobierno.
+
+El control real está donde el camión tiene que pasar sí o sí: **la revisión que bloquea la entrega en el sistema de código**, el gancho que salta *antes* de que el cambio se escriba, y —el más barato de todos— **el simple código de resultado que devuelve la herramienta**, que cualquier sistema del mundo entiende sin necesidad de integración.
+
+**5 · Por eso el orden de aprendizaje se invierte.**
+
+La propuesta anterior era: aprender IA, y después aplicarla a la gobernanza. El orden correcto para *este* producto es el contrario:
+
+> **Primero registrar. Después medir si aciertas. Y solo entonces dejar que la IA juzgue.**
+
+### Qué está en juego, y cuándo
+
+Tres hechos, sin adornos:
+
+| | |
+|---|---|
+| **Nada ha corrido nunca en producción** | El sistema está construido pero jamás se ha desplegado. Cero registros acumulados. Todo lo demás depende de esto. |
+| **La ventaja declarada tiene fecha** | La propia estrategia de Evolith se da entre 12 y 18 meses de margen antes de que alguien ocupe el terreno. Una parte ya se ha consumido. |
+| **El competidor ya se movió** | Marzo de 2026. No es una amenaza futura: es un producto en el mercado. |
+
+### Por dónde se empieza
+
+Lo más importante de todo el análisis es esto: **las cuatro acciones de mayor impacto no requieren aprender IA.**
+
+1. **Apuntar quién hace cada cosa.** Añadir a la base de datos la distinción entre "lo hizo una persona" y "lo hizo un agente, con este modelo, en esta sesión". Es trabajo de días. **Es lo único que caduca**: lo que no se apunte hoy no se recupera nunca.
+2. **Hacer que la herramienta diga *por qué* falló** de una forma que cualquier sistema entienda. Semanas de trabajo, y convierte un consejo en un control — en todos los entornos a la vez, sin escribir una integración para cada uno.
+3. **Publicar la tasa de error de las reglas que ya existen.** Es lo que hace vendible el producto a un responsable de riesgos, y hoy no puede afirmarlo nadie en esta categoría.
+4. **Desplegarlo**, para que el cuaderno empiece a llenarse.
+
+Ninguna de las cuatro es un proyecto de investigación. Las cuatro están sin empezar.
+
+### La pregunta que guía todo lo demás
+
+No es *"¿qué IA necesito aprender?"*. Es:
+
+> **¿Qué necesito dominar para que Evolith pueda decir, con evidencia firmada y una tasa de error publicada, cómo evoluciona una arquitectura cuando personas y agentes la construyen juntos?**
+
+Todo lo que viene después —tecnologías, calendario, proyectos— se justifica solo en la medida en que sirve a esa frase.
+
+### Cómo leer el resto
+
+| Si eres… | Lee |
+|---|---|
+| **Ejecutivo o responsable de producto** | Esta sección y la [13, *The Future of Evolith*](#13-the-future-of-evolith--hipótesis-a-3-5-años). Con eso tienes el diagnóstico y la apuesta. |
+| **Arquitecto o responsable técnico** | Añade las secciones 1 a 3 (estado real y diagnóstico) y la 7 (proyectos). |
+| **Quien vaya a ejecutar la ruta** | El documento completo. Las secciones 4 a 12 son el plan operativo: calendario, tecnologías, referencias y matriz de conocimientos. |
+
+*A partir de aquí el texto se vuelve técnico y asume vocabulario de ingeniería. Cada término enlaza a su definición con un ejemplo en el [glosario](glosario-ai-native-es.md).*
 
 ---
 

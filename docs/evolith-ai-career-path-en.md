@@ -6,27 +6,104 @@
 
 ---
 
-## 0. Executive summary — the corrected thesis
+## 0. Understanding this in five minutes
 
-The previous proposal assumed Evolith's bottleneck was **AI knowledge**. It is not.
+*This section assumes no technical background. If you only read one part of the document, read this one.*
 
-The bottleneck is that **the data that constitutes the moat does not yet exist, and every day the system runs uninstrumented, part of it is permanently destroyed**. The three or four highest-impact decisions of the next twelve months require almost no new AI: type a column, define exit codes, publish a Check Run, sign a decision.
+### The building site nobody is writing down
 
-Five hard corrections follow:
+Building software resembles putting up a building. There are blueprints, there are bricklayers, and there is an inspector confirming at each stage that what was built matches what was approved. **Evolith is that inspector**, and its promise is that architecture decisions actually hold.
 
-| # | Correction | Why |
-|---|---|---|
-| **1** | **The moat is not the [knowledge graph](glossary-ai-native-en.md#knowledge-graph). It is the attributable [provenance](glossary-ai-native-en.md#provenance) record.** | The lineage Evolith needs is a *time series with joins*, not a traversal problem. A semantic graph over ADR prose imports non-determinism into the one system whose entire promise is the reproducible verdict. |
-| **2** | **Determinism ≠ correctness.** Evolith blocks merges without ever having measured its own false-positive rate. | The day an AI-assisted gate blocks wrongly, the [LLM](glossary-ai-native-en.md#llm) will be blamed and there will be no data to prove otherwise. **Calibration is the licence to use AI at all.** |
-| **3** | **The wedge is aimed at the wrong drift.** | The 2026 longitudinal evidence says AI's damage is duplication, collapsed refactoring and abandoned maintenance — **all of it import-legal**. The 167 boundary rules are blind to it. And on 2026-03-02 Sonar shipped the detection half of the wedge to GA, free and auto-discovered. |
-| **4** | **[MCP](glossary-ai-native-en.md#mcp) is the weakest control surface, not the strongest.** | MCP is client-cooperative: an agent that never invokes it is entirely ungoverned. Real control lives where the agent cannot route around it: **exit codes, the `PreToolUse` hook, the [Checks API](glossary-ai-native-en.md#checks-api--check-run), the gateway**. |
-| **5** | **The learning sequence inverts.** | Your hypothesis starts at AI fundamentals and ends at governance. For *this* product the correct order is: **instrument → measure → only then generate**. |
+What changed in the last two years is who lays the bricks. There are now **robot bricklayers** — AI agents — raising walls faster than any human crew. They are quick, obedient and tireless. And they do not look at the blueprints unless someone imposes them.
 
-**The question that should drive the route is not "what AI must I learn?" but:**
+So far, Evolith's original thesis is right, and it stays right.
 
-> **What must I master so that Evolith can state, with signed evidence and a published error rate, how an architecture evolves when humans and agents write it together?**
+This review's finding is a different one, and it is uncomfortable: **the site has been running for months and the logbook is blank.** Not for lack of technology — the inspector is well built, with years of solid engineering behind it — but because **it has never been put to work on a real site**. Zero inspections recorded. Zero pages written.
 
-Everything else — [RAG](glossary-ai-native-en.md#rag), graphs, agents, orchestration — is a means or a distraction depending on whether it serves that sentence.
+And here is the detail that makes it urgent: **the logbook can only be written while the work happens.** A year from now, nobody will be able to reconstruct who laid which brick.
+
+### The five findings, in plain terms
+
+**1 · The valuable thing is the logbook, not a cleverer blueprint.**
+
+The earlier plan proposed building an intelligent model of the building: a map relating everything to everything. It is the intellectually attractive answer, and it is the wrong one.
+
+What makes an inspector irreplaceable is not their model. It is their logbook: *who* did this, *when*, and *under which version of the code in force that day*. No competitor has that, and it cannot be copied — only accumulated.
+
+> **The concrete case.** A 2026 study across 180 million repositories tried to work out, after the fact, which code an AI had written. The method essentially the whole industry relies on recovered **3 cases in 100**. The conclusion is brutal in its simplicity: either you write it down as it happens, or you lose it forever.
+
+**2 · The inspector has never measured how often it is wrong.**
+
+Evolith rejects work. It blocks deliveries that fail the rules. But nobody has ever measured **how often it rejects work that was actually fine**.
+
+That is the number deciding whether the product gets used or switched off. An inspector who stops one in three correct deliveries does not get corrected — he gets bypassed. The crew finds a way around him.
+
+And there is a bigger reputational risk. The day Evolith adds AI to its judgements, the first wrong block will be blamed on the AI — with not one data point to show the system already failed at the same rate before.
+
+> **Hence the document's key sentence:** measuring is not bureaucratic overhead, it is **the permission to use AI at all**. Without a published figure, an automated judgement is an opinion in good formatting.
+
+**3 · It is watching for the wrong damage.**
+
+Evolith checks that walls stand where the blueprints say. That is a legitimate check… and it is not where the robots do damage.
+
+Evidence measured across hundreds of millions of real changes says the deterioration AI introduces is different: **it repeats the same work in eight slightly different places instead of reusing what exists, it stops tidying what is becoming untidy, and it never goes back to repair the old sections.**
+
+Translated to the site: every wall is exactly where the blueprint says. But eight different mortars went into the same partition, nobody removes the scaffolding, and no old section is ever revisited. **A "walls in the right place" inspection passes that site without a single objection.**
+
+> **And the clock is running.** On 2 March 2026 a large competitor (Sonar) began giving away precisely that "walls in the right place" check: automatic, zero setup, five languages, and sold explicitly against the mess AI creates. The detection half of Evolith's advantage became free.
+
+**4 · The gate everyone trusts is the one that can be walked around.**
+
+Today Evolith's main control is a service the agent **may consult** before writing code. The problem is in those two words: may consult. Nothing compels it.
+
+It is a rulebook resting on a table at the site entrance. The robot that never opens it is entirely ungoverned.
+
+Real control sits where the truck must pass: **the check that blocks the merge in the code system**, the hook firing *before* the change lands, and — cheapest of all — **the plain result code the tool returns**, which every system in the world understands with no integration required.
+
+**5 · Which is why the learning order inverts.**
+
+The earlier proposal was: learn AI, then apply it to governance. The right order for *this* product is the opposite:
+
+> **First record. Then measure whether you are right. And only then let AI judge.**
+
+### What is at stake, and when
+
+Three facts, unadorned:
+
+| | |
+|---|---|
+| **Nothing has ever run in production** | The system is built but has never been deployed. Zero records accumulated. Everything else depends on this. |
+| **The declared advantage has an expiry date** | Evolith's own strategy gives itself 12 to 18 months before someone else takes the ground. Part of that is already spent. |
+| **The competitor has already moved** | March 2026. Not a future threat: a product on the market. |
+
+### Where to start
+
+The single most important point of the whole analysis is this: **the four highest-impact actions require no AI learning at all.**
+
+1. **Write down who does what.** Add to the database the distinction between "a person did this" and "an agent did this, with this model, in this session". Days of work. **It is the only one that expires**: what is not written down today is never recoverable.
+2. **Make the tool say *why* it failed** in a way any system understands. Weeks of work, and it turns advice into control — across every environment at once, without writing an integration for each.
+3. **Publish the error rate of the rules that already exist.** It is what makes the product sellable to a risk officer, and nobody in this category can currently claim it.
+4. **Deploy it**, so the logbook starts filling.
+
+None of the four is a research project. All four are unstarted.
+
+### The question driving everything else
+
+It is not *"what AI must I learn?"*. It is:
+
+> **What must I master so that Evolith can state, with signed evidence and a published error rate, how an architecture evolves when people and agents build it together?**
+
+Everything that follows — technologies, calendar, projects — is justified only insofar as it serves that sentence.
+
+### How to read the rest
+
+| If you are… | Read |
+|---|---|
+| **An executive or product owner** | This section and [13, *The Future of Evolith*](#13-the-future-of-evolith--a-3-5-year-hypothesis). That gives you the diagnosis and the bet. |
+| **An architect or technical lead** | Add sections 1 to 3 (real state and diagnosis) and 7 (projects). |
+| **Whoever executes the route** | The whole document. Sections 4 to 12 are the operating plan: calendar, technologies, references and knowledge matrix. |
+
+*From here the text turns technical and assumes engineering vocabulary. Every term links to its definition with an example in the [glossary](glossary-ai-native-en.md).*
 
 ---
 
