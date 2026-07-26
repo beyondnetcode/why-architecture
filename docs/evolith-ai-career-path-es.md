@@ -2,8 +2,6 @@
 
 > **Navegación bilingüe:** [Read in English](evolith-ai-career-path-en.md) · **¿Un término que no conoces?** [Glosario AI-native](glosario-ai-native-es.md) — cada término técnico del texto enlaza a su definición con un ejemplo.
 >
-> **Sustituye** a [`evolith-ai-native-route-es.md`](evolith-ai-native-route-es.md) y a [`evolith-ai-native-plan-es.md`](evolith-ai-native-plan-es.md). Aquellos partían de "aprender IA aplicada a architecture governance". Este parte de la pregunta correcta: **¿qué debo dominar para diseñar Evolith Core + Tracker + CLI + [MCP](glosario-ai-native-es.md#mcp) + Agents como un ecosistema AI-native?** — y llega a una respuesta distinta.
->
 > **Base:** inspección directa del código real de `evolith` y `evolith_tracker` (no de su documentación), más investigación multiagente sobre 10 dominios con fuentes primarias. Fecha: 2026-07-25.
 
 ---

@@ -2,8 +2,6 @@
 
 > **Bilingual navigation:** [Versión en Español](evolith-ai-career-path-es.md) · **Unfamiliar term?** [AI-native Glossary](glossary-ai-native-en.md) — every technical term in the text links to its definition with an example.
 >
-> **Supersedes** [`evolith-ai-native-route-es.md`](evolith-ai-native-route-es.md) and [`evolith-ai-native-plan-es.md`](evolith-ai-native-plan-es.md). Those started from "learn AI applied to architecture governance". This one starts from the right question: **what must I master to design Evolith Core + Tracker + CLI + [MCP](glossary-ai-native-en.md#mcp) + Agents as one AI-native ecosystem?** — and arrives at a different answer.
->
 > **Basis:** direct source inspection of the real `evolith` and `evolith_tracker` repositories (not their documentation), plus [multi-agent](glossary-ai-native-en.md#multi-agent--swarm) research across 10 domains against primary sources. Date: 2026-07-25.
 
 ---
